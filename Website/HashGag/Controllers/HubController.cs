@@ -14,10 +14,5 @@ namespace HashGag.Controllers
         {
             return View();
         }
-
-        public ActionResult Create()
-        {
-            return View();
-        }
 	}
 }
