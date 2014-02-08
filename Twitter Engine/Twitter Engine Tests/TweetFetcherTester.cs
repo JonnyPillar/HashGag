@@ -46,7 +46,7 @@ namespace Twitter_Engine_Tests
             [Test]
             public void testTwitterUsernamePresence()
             {
-                string sender = new CompetitionTweet(this).Sender();
+                string sender = new CompetitionTweet(this, "studenthack").Sender();
                 Assert.That(sender, Is.EqualTo("Jimmy"));
             }
         }
