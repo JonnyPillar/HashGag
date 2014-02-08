@@ -8,11 +8,12 @@
         <EntityTypeShape EntityType="hashgagModel.CompetitionTweet" Width="1.5" PointX="5.25" PointY="5.625" IsExpanded="true" />
         <EntityTypeShape EntityType="hashgagModel.Question" Width="1.5" PointX="3" PointY="5.5" IsExpanded="true" />
         <EntityTypeShape EntityType="hashgagModel.Tweet" Width="1.5" PointX="3" PointY="8.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="hashgagModel.TwitterUser" Width="1.5" PointX="0.75" PointY="3.625" IsExpanded="true" />
         <AssociationConnector Association="hashgagModel.FK__Competiti__Quest__34C8D9D1" ManuallyRouted="false" />
-        <AssociationConnector Association="hashgagModel.FK__Competiti__Tweet__35BCFE0A" ManuallyRouted="false" />
-        <AssociationConnector Association="hashgagModel.FK__Question__AskedB__2A4B4B5E" ManuallyRouted="false" />
-        <AssociationConnector Association="hashgagModel.FK__Tweet__TwitterUs__1ED998B2" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="hashgagModel.TwitterUser" Width="1.5" PointX="0.75" PointY="7.125" />
+        <AssociationConnector Association="hashgagModel.FK__Competiti__Tweet__35BCFE0A" />
+        <AssociationConnector Association="hashgagModel.FK__Question__AskedB__2A4B4B5E" />
+        <AssociationConnector Association="hashgagModel.FK__Tweet__TwitterUs__1ED998B2" />
+        <EntityTypeShape EntityType="hashgagModel.IdentityUserLogin" Width="1.5" PointX="0.75" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

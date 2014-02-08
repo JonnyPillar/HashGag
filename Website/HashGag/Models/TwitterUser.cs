@@ -24,26 +24,18 @@ namespace HashGag.Models
         public int HashgagUserID { get; set; }
         public long TwitterID { get; set; }
         public System.DateTimeOffset CreatedAt { get; set; }
-        public bool DefaultProfile { get; set; }
-        public bool DefaultProfileImage { get; set; }
         public string Description { get; set; }
         public Nullable<int> FavouritesCount { get; set; }
-        public int FollowersCount { get; set; }
-        public int FriendsCount { get; set; }
-        public bool GeoEnabled { get; set; }
+        public Nullable<int> FollowersCount { get; set; }
+        public Nullable<int> FriendsCount { get; set; }
         public string IDStr { get; set; }
-        public int ListedCount { get; set; }
+        public Nullable<int> ListedCount { get; set; }
         public string Location { get; set; }
         public string Name { get; set; }
         public string ProfileImageURL { get; set; }
         public string ProfileImageURLHttps { get; set; }
-        public bool Protected { get; set; }
         public string ScreenName { get; set; }
-        public int StatusesCount { get; set; }
-        public string TimeZone { get; set; }
-        public string URL { get; set; }
-        public Nullable<int> UtcOffset { get; set; }
-        public bool Verified { get; set; }
+        public Nullable<int> StatusesCount { get; set; }
     
         public virtual ICollection<CompetitionTweet> CompetitionTweets { get; set; }
         public virtual ICollection<Question> Questions { get; set; }
