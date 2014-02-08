@@ -276,11 +276,12 @@
     <Content Include="Views\Shared\_Navigation.cshtml" />
     <Content Include="Views\User\Index.cshtml" />
     <Content Include="Views\Standings\Index.cshtml" />
+    <Content Include="Views\Shared\Cards\TweetCard.cshtml" />
+    <Content Include="Views\Shared\Cards\QuestionCard.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\Partial\" />
-    <Folder Include="Views\NewFolder1\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
