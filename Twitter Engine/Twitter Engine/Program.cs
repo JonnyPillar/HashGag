@@ -13,13 +13,13 @@ namespace Twitter_Engine
     {
         static void Main(string[] args)
         {
-            FetchTweets("studenthack");
+            FetchTweets();
         }
 
-        public static void FetchTweets(String hashtag)
+        public static void FetchTweets()
         {
             TwitterFetcher fetcher = new TwitterFetcher();
-            TweetManager cTweet = new TweetManager(fetcher, hashtag);
+            TweetManager cTweet = new TweetManager(fetcher);
         }
     }
 }

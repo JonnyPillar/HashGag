@@ -6,12 +6,12 @@
     <edmx:Diagrams>
       <Diagram DiagramId="3ee76806e3274d119a797ff4460d97bb" Name="Diagram1" ZoomLevel="96">
         <EntityTypeShape EntityType="hashgagModel.CompetitionTweet" Width="1.5" PointX="5.25" PointY="5.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="hashgagModel.Question" Width="1.5" PointX="3" PointY="5.5" IsExpanded="true" />
-        <AssociationConnector Association="hashgagModel.FK__Competiti__Quest__34C8D9D1" ManuallyRouted="false" />
         <EntityTypeShape EntityType="hashgagModel.TwitterUser" Width="1.5" PointX="0.75" PointY="7.125" />
         <AssociationConnector Association="hashgagModel.FK__Competiti__Tweet__35BCFE0A" />
-        <AssociationConnector Association="hashgagModel.FK__Question__AskedB__2A4B4B5E" />
         <EntityTypeShape EntityType="hashgagModel.Tweet" Width="1.5" PointX="5.375" PointY="7.875" />
+        <EntityTypeShape EntityType="hashgagModel.Question" Width="1.5" PointX="3" PointY="8" />
+        <AssociationConnector Association="hashgagModel.FK__Competiti__Quest__34C8D9D1" />
+        <AssociationConnector Association="hashgagModel.FK__Question__AskedB__2A4B4B5E" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

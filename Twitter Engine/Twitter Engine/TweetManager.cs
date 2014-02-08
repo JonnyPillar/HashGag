@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Sockets;
 using System.Security.Cryptography;
 using NUnit.Framework;
 using TweetinCore.Interfaces;
@@ -10,22 +11,31 @@ namespace Twitter_Engine
 {
     public class TweetManager
     {
-        public TweetManager(ITweetFetcher tweetFetcher, String hashtag)
+        hashgagEntities db = new hashgagEntities();
+        public TweetManager(ITweetFetcher tweetFetcher)
         {
-            List<ITweet> tweets = new List<ITweet>();
-            List<ITweet> currentTweetFetch = tweetFetcher.GetListOfTweetsWithHashTag(hashtag);
-            tweets.AddRange(currentTweetFetch);
-            while (currentTweetFetch.Count > 0)
+            var questions = db.Questions
+                .Where (q=> q.StartDate <= DateTime.Now )
+                .Where(q=> q.EndDate >= DateTime.Now);
+            foreach (Question currentQuestion in questions )
             {
-                currentTweetFetch = tweetFetcher.GetListOfTweetsWithHashTag(hashtag, (long) currentTweetFetch.Last().Id-1);
+                string hashtag = currentQuestion.Text;
+                List<ITweet> tweets = new List<ITweet>();
+                List<ITweet> currentTweetFetch = tweetFetcher.GetListOfTweetsWithHashTag(hashtag);
                 tweets.AddRange(currentTweetFetch);
+                while (currentTweetFetch.Count > 0)
+                {
+                    currentTweetFetch = tweetFetcher.GetListOfTweetsWithHashTag(hashtag, (long)currentTweetFetch.Last().Id - 1);
+                    tweets.AddRange(currentTweetFetch);
+                }
+                ProcessTweets(tweets);
             }
-            ProcessTweets(tweets);
+
+           
         }
 
         public void ProcessTweets(List<ITweet> tweets)
         {
-            hashgagEntities db = new hashgagEntities();
             foreach (ITweet tweet in tweets)
             {
                 var twitterUser = db.TwitterUsers
