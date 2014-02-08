@@ -1,4 +1,6 @@
-﻿@{
+﻿//@Model User
+
+@{
     ViewBag.Title = "Home Page";
 }
 
@@ -12,6 +14,12 @@
     <div class="col-md-4">
         <h2>Getting started</h2>
         <p>
+            
+            <a>User.Name</a>
+            for each Tweet in Tweets
+            {
+                <a>Tweet.Text</a>
+            }
             ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
             enables a clean separation of concerns and gives you full control over markup
             for enjoyable, agile development.
