@@ -1,4 +1,4 @@
-﻿@model User
+﻿@model HashGag.Models.Question
 
 @{
     ViewBag.Title = "Competition";
@@ -7,8 +7,7 @@
 <div class="competition-container">
     <div class="wireframe" id="competition-titlebar">
         titlebar
-        
-        @Html.DisplayFor(model => model.FirstName)
+        @Html.DisplayFor(mode => mode.Text)
         <label>Jon</label>
     </div>
     <div class="wireframe" id="competition-question">
