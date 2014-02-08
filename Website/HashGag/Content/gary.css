@@ -1,0 +1,9 @@
+﻿body {
+}
+#competition-container {
+    margin: 0 auto;
+    width: 50%;
+}
+.wireframe {
+    border: 1px solid black;
+}
