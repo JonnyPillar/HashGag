@@ -1,4 +1,4 @@
-﻿@model dynamic
+﻿@model User
 
 @{
     ViewBag.Title = "Competition";
@@ -7,6 +7,9 @@
 <div class="competition-container">
     <div class="wireframe" id="competition-titlebar">
         titlebar
+        
+        @Html.DisplayFor(model => model.FirstName)
+        <label>Jon</label>
     </div>
     <div class="wireframe" id="competition-question">
         question

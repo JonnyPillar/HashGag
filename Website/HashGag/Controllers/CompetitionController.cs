@@ -12,6 +12,7 @@ namespace HashGag.Controllers
         // GET: /Competition/
         public ActionResult Index()
         {
+
             return View();
         }
 	}
