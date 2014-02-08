@@ -24,9 +24,9 @@ namespace HashGag
             //    clientId: "",
             //    clientSecret: "");
 
-            //app.UseTwitterAuthentication(
-            //   consumerKey: "",
-            //   consumerSecret: "");
+            app.UseTwitterAuthentication(
+               consumerKey: "VwD3PGX8u1N9M0Xx6CGDQ",
+               consumerSecret: "83sbmP92deZc6v3xfDmD5f0TmAOMNqy8Rd7n2Gyagbw");
 
             //app.UseFacebookAuthentication(
             //   appId: "",
