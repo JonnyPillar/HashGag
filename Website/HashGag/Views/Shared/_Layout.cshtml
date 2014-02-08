@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@Model User
+
+<!DOCTYPE html>
 <html>
 @Html.Partial("_Header")
 <body>
@@ -8,7 +10,6 @@
         @Html.Partial("_Footer")
     </div>
 </body>
-
 @Scripts.Render("~/bundles/jquery")
 @Scripts.Render("~/bundles/bootstrap")
 @RenderSection("scripts", required: false)

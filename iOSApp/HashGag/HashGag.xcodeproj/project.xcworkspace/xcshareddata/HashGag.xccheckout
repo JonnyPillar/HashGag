@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>4AEAE522-201B-46BB-8493-B8EE8D5AB9D2</string>
+	<key>IDESourceControlProjectName</key>
+	<string>HashGag</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>F86A2C2A-D6A3-433F-8AA7-E924ED37B092</key>
+		<string>https://github.com/livelyjp/HashGag.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>HashGag/HashGag.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>F86A2C2A-D6A3-433F-8AA7-E924ED37B092</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/livelyjp/HashGag.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>F86A2C2A-D6A3-433F-8AA7-E924ED37B092</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>F86A2C2A-D6A3-433F-8AA7-E924ED37B092</string>
+			<key>IDESourceControlWCCName</key>
+			<string>HashGag</string>
+		</dict>
+	</array>
+</dict>
+</plist>
