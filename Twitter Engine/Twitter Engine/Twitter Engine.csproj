@@ -33,6 +33,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>packages\EntityFramework.6.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>packages\EntityFramework.6.0.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Practices.Prism">
       <HintPath>Z:\Google Drive\Education\Uni\Student Hack\HashGag\Twitter Engine\Twitter Engine\Tweetinvi\Microsoft.Practices.Prism.dll</HintPath>
     </Reference>
@@ -49,8 +55,11 @@
       <HintPath>Z:\Google Drive\Education\Uni\Student Hack\HashGag\Twitter Engine\Twitter Engine\Tweetinvi\Streaminvi.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -73,8 +82,37 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CompetitionTweet.cs" />
+    <Compile Include="Models\Partials\Tweet.cs" />
+    <Compile Include="Models\Partials\TwitterUser.cs" />
+    <Compile Include="Models\TwitterUser.cs">
+      <DependentUpon>HashGagDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TweetManager.cs" />
     <Compile Include="ITweetFetcher.cs" />
+    <Compile Include="Models\CompetitionTweet.cs">
+      <DependentUpon>HashGagDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HashGagDatabase.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HashGagDatabase.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HashGagDatabase.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HashGagDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HashGagDatabase.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HashGagDatabase.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Question.cs">
+      <DependentUpon>HashGagDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Tweet.cs">
+      <DependentUpon>HashGagDatabase.tt</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TwitterFetcher.cs" />
@@ -83,7 +121,27 @@
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>
+    <EntityDeploy Include="Models\HashGagDatabase.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>HashGagDatabase.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Models\HashGagDatabase.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>HashGagDatabase.edmx</DependentUpon>
+      <LastGenOutput>HashGagDatabase.Context.cs</LastGenOutput>
+    </None>
+    <None Include="Models\HashGagDatabase.edmx.diagram">
+      <DependentUpon>HashGagDatabase.edmx</DependentUpon>
+    </None>
+    <None Include="Models\HashGagDatabase.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>HashGagDatabase.edmx</DependentUpon>
+      <LastGenOutput>HashGagDatabase.cs</LastGenOutput>
+    </None>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

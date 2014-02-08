@@ -16,7 +16,7 @@ namespace Twitter_Engine_Tests
         public class TestTweetInvi
         {
             [Test]
-            public void doesTweetMatchHashTag()
+            public void DoesTweetMatchHashTag()
             {
                 List<ITweet> matchingTweets = new TwitterFetcher().GetListOfTweetsWithHashTag("nicetrydickheadbob");
                 ITweet tweet = matchingTweets.First();
@@ -24,30 +24,10 @@ namespace Twitter_Engine_Tests
             }
 
             [Test]
-            public void testGetNumberOfTweetsForHashtag()
+            public void TestGetNumberOfTweetsForHashtag()
             {
-                List<ITweet> matchingTweets = new TwitterFetcher().GetListOfTweetsWithHashTag("nicetrydickheadbob");
+                List<ITweet> matchingTweets = new TwitterFetcher().GetListOfTweetsWithHashTag("sochiproblems");
                 Assert.That(matchingTweets.Count, Is.GreaterThan(0));
-            }
-        }
-
-        [TestFixture]
-        public class TestTweetManipulation : ITweetFetcher
-        {
-            public List<ITweet> GetListOfTweetsWithHashTag(string hashTag)
-            {
-                var listOfTweets = new List<ITweet>();
-                ITweet tweet = new Tweet();
-                tweet.Creator = new User("Jimmy");
-                listOfTweets.Add(tweet);
-                return listOfTweets;
-            }
-
-            [Test]
-            public void testTwitterUsernamePresence()
-            {
-                string sender = new CompetitionTweet(this, "studenthack").Sender();
-                Assert.That(sender, Is.EqualTo("Jimmy"));
             }
         }
     }

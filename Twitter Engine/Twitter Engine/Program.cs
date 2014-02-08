@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using TwitterToken;
 using TweetinCore.Interfaces.TwitterToken;
+using Twitter_Engine.Models;
 
 namespace Twitter_Engine
 {
@@ -12,14 +13,13 @@ namespace Twitter_Engine
     {
         static void Main(string[] args)
         {
-            
             FetchTweets("studenthack");
         }
 
         public static void FetchTweets(String hashtag)
         {
             TwitterFetcher fetcher = new TwitterFetcher();
-            CompetitionTweet cTweet = new CompetitionTweet(fetcher, hashtag);
+            TweetManager cTweet = new TweetManager(fetcher, hashtag);
         }
     }
 }

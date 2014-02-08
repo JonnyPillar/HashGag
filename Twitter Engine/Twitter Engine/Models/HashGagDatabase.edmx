@@ -1,0 +1,342 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="hashgagModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="CompetitionTweet">
+          <Key>
+            <PropertyRef Name="CompetitionTweetID" />
+          </Key>
+          <Property Name="CompetitionTweetID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="QuestionID" Type="int" />
+          <Property Name="TweetID" Type="int" />
+        </EntityType>
+        <EntityType Name="Question">
+          <Key>
+            <PropertyRef Name="QuestionID" />
+          </Key>
+          <Property Name="QuestionID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Text" Type="nvarchar" MaxLength="255" />
+          <Property Name="Duration" Type="bigint" />
+          <Property Name="CreationDate" Type="datetimeoffset" Precision="7" />
+          <Property Name="StartDate" Type="datetimeoffset" Precision="7" />
+          <Property Name="AskedByTwitterUser" Type="int" />
+        </EntityType>
+        <EntityType Name="Tweet">
+          <Key>
+            <PropertyRef Name="HashgagTweetID" />
+          </Key>
+          <Property Name="HashgagTweetID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TweetID" Type="bigint" />
+          <Property Name="TwitterUserID" Type="bigint" />
+          <Property Name="CreatedAt" Type="datetimeoffset" Precision="7" />
+          <Property Name="FavouriteCount" Type="int" />
+          <Property Name="Favourited" Type="bit" />
+          <Property Name="IDString" Type="nvarchar" MaxLength="255" />
+          <Property Name="InReplyToScreenName" Type="nvarchar" MaxLength="255" />
+          <Property Name="InReplyToStatusID" Type="bigint" />
+          <Property Name="InReplyToStatusIDString" Type="nvarchar" MaxLength="255" />
+          <Property Name="InReplyToUserID" Type="bigint" />
+          <Property Name="InReplyToUserIDString" Type="nvarchar" MaxLength="255" />
+          <Property Name="Lat" Type="float" />
+          <Property Name="Long" Type="float" />
+          <Property Name="RetweetCount" Type="int" />
+          <Property Name="Retweeted" Type="bit" />
+          <Property Name="Text" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="TwitterUser">
+          <Key>
+            <PropertyRef Name="HashgagUserID" />
+          </Key>
+          <Property Name="HashgagUserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TwitterID" Type="bigint" Nullable="false" />
+          <Property Name="CreatedAt" Type="datetimeoffset" Precision="7" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="255" />
+          <Property Name="FavouritesCount" Type="int" />
+          <Property Name="FollowersCount" Type="int" />
+          <Property Name="FriendsCount" Type="int" />
+          <Property Name="IDStr" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="ListedCount" Type="int" />
+          <Property Name="Location" Type="nvarchar" MaxLength="255" />
+          <Property Name="Name" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="ProfileImageURL" Type="nvarchar" MaxLength="255" />
+          <Property Name="ProfileImageURLHttps" Type="nvarchar" MaxLength="255" />
+          <Property Name="ScreenName" Type="nvarchar" MaxLength="15" Nullable="false" />
+          <Property Name="StatusesCount" Type="int" />
+        </EntityType>
+        <Association Name="FK__Competiti__Quest__34C8D9D1">
+          <End Role="Question" Type="Self.Question" Multiplicity="0..1" />
+          <End Role="CompetitionTweet" Type="Self.CompetitionTweet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Question">
+              <PropertyRef Name="QuestionID" />
+            </Principal>
+            <Dependent Role="CompetitionTweet">
+              <PropertyRef Name="QuestionID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Competiti__Tweet__35BCFE0A">
+          <End Role="TwitterUser" Type="Self.TwitterUser" Multiplicity="0..1" />
+          <End Role="CompetitionTweet" Type="Self.CompetitionTweet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TwitterUser">
+              <PropertyRef Name="HashgagUserID" />
+            </Principal>
+            <Dependent Role="CompetitionTweet">
+              <PropertyRef Name="TweetID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Question__AskedB__2A4B4B5E">
+          <End Role="TwitterUser" Type="Self.TwitterUser" Multiplicity="0..1" />
+          <End Role="Question" Type="Self.Question" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TwitterUser">
+              <PropertyRef Name="HashgagUserID" />
+            </Principal>
+            <Dependent Role="Question">
+              <PropertyRef Name="AskedByTwitterUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="hashgagModelStoreContainer">
+          <EntitySet Name="CompetitionTweet" EntityType="Self.CompetitionTweet" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Question" EntityType="Self.Question" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tweet" EntityType="Self.Tweet" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TwitterUser" EntityType="Self.TwitterUser" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Competiti__Quest__34C8D9D1" Association="Self.FK__Competiti__Quest__34C8D9D1">
+            <End Role="Question" EntitySet="Question" />
+            <End Role="CompetitionTweet" EntitySet="CompetitionTweet" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Competiti__Tweet__35BCFE0A" Association="Self.FK__Competiti__Tweet__35BCFE0A">
+            <End Role="TwitterUser" EntitySet="TwitterUser" />
+            <End Role="CompetitionTweet" EntitySet="CompetitionTweet" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Question__AskedB__2A4B4B5E" Association="Self.FK__Question__AskedB__2A4B4B5E">
+            <End Role="TwitterUser" EntitySet="TwitterUser" />
+            <End Role="Question" EntitySet="Question" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="hashgagModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="CompetitionTweet">
+          <Key>
+            <PropertyRef Name="CompetitionTweetID" />
+          </Key>
+          <Property Name="CompetitionTweetID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="QuestionID" Type="Int32" />
+          <Property Name="TweetID" Type="Int32" />
+          <NavigationProperty Name="Question" Relationship="Self.FK__Competiti__Quest__34C8D9D1" FromRole="CompetitionTweet" ToRole="Question" />
+          <NavigationProperty Name="TwitterUser" Relationship="hashgagModel.FK__Competiti__Tweet__35BCFE0A" FromRole="CompetitionTweet" ToRole="TwitterUser" />
+        </EntityType>
+        <EntityType Name="Question">
+          <Key>
+            <PropertyRef Name="QuestionID" />
+          </Key>
+          <Property Name="QuestionID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Text" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Duration" Type="Int64" />
+          <Property Name="CreationDate" Type="DateTimeOffset" Precision="7" />
+          <Property Name="StartDate" Type="DateTimeOffset" Precision="7" />
+          <Property Name="AskedByTwitterUser" Type="Int32" />
+          <NavigationProperty Name="CompetitionTweets" Relationship="Self.FK__Competiti__Quest__34C8D9D1" FromRole="Question" ToRole="CompetitionTweet" />
+          <NavigationProperty Name="TwitterUser" Relationship="hashgagModel.FK__Question__AskedB__2A4B4B5E" FromRole="Question" ToRole="TwitterUser" />
+        </EntityType>
+        <Association Name="FK__Competiti__Quest__34C8D9D1">
+          <End Role="Question" Type="Self.Question" Multiplicity="0..1" />
+          <End Role="CompetitionTweet" Type="Self.CompetitionTweet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Question">
+              <PropertyRef Name="QuestionID" />
+            </Principal>
+            <Dependent Role="CompetitionTweet">
+              <PropertyRef Name="QuestionID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="hashgagEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CompetitionTweets" EntityType="Self.CompetitionTweet" />
+          <EntitySet Name="Questions" EntityType="Self.Question" />
+          <AssociationSet Name="FK__Competiti__Quest__34C8D9D1" Association="Self.FK__Competiti__Quest__34C8D9D1">
+            <End Role="Question" EntitySet="Questions" />
+            <End Role="CompetitionTweet" EntitySet="CompetitionTweets" />
+          </AssociationSet>
+          <EntitySet Name="TwitterUsers" EntityType="hashgagModel.TwitterUser" />
+          <AssociationSet Name="FK__Competiti__Tweet__35BCFE0A" Association="hashgagModel.FK__Competiti__Tweet__35BCFE0A">
+            <End Role="TwitterUser" EntitySet="TwitterUsers" />
+            <End Role="CompetitionTweet" EntitySet="CompetitionTweets" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Question__AskedB__2A4B4B5E" Association="hashgagModel.FK__Question__AskedB__2A4B4B5E">
+            <End Role="TwitterUser" EntitySet="TwitterUsers" />
+            <End Role="Question" EntitySet="Questions" />
+          </AssociationSet>
+          <EntitySet Name="Tweets" EntityType="hashgagModel.Tweet" />
+          </EntityContainer>
+        <EntityType Name="TwitterUser">
+          <Key>
+            <PropertyRef Name="HashgagUserID" />
+          </Key>
+          <Property Name="HashgagUserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TwitterID" Type="Int64" Nullable="false" />
+          <Property Name="CreatedAt" Type="DateTimeOffset" Nullable="false" Precision="7" />
+          <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="FavouritesCount" Type="Int32" />
+          <Property Name="FollowersCount" Type="Int32" />
+          <Property Name="FriendsCount" Type="Int32" />
+          <Property Name="IDStr" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ListedCount" Type="Int32" />
+          <Property Name="Location" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="ProfileImageURL" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ProfileImageURLHttps" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ScreenName" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="StatusesCount" Type="Int32" />
+          <NavigationProperty Name="CompetitionTweets" Relationship="hashgagModel.FK__Competiti__Tweet__35BCFE0A" FromRole="TwitterUser" ToRole="CompetitionTweet" />
+          <NavigationProperty Name="Questions" Relationship="hashgagModel.FK__Question__AskedB__2A4B4B5E" FromRole="TwitterUser" ToRole="Question" />
+        </EntityType>
+        <Association Name="FK__Competiti__Tweet__35BCFE0A">
+          <End Type="hashgagModel.TwitterUser" Role="TwitterUser" Multiplicity="0..1" />
+          <End Type="hashgagModel.CompetitionTweet" Role="CompetitionTweet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TwitterUser">
+              <PropertyRef Name="HashgagUserID" />
+            </Principal>
+            <Dependent Role="CompetitionTweet">
+              <PropertyRef Name="TweetID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Question__AskedB__2A4B4B5E">
+          <End Type="hashgagModel.TwitterUser" Role="TwitterUser" Multiplicity="0..1" />
+          <End Type="hashgagModel.Question" Role="Question" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TwitterUser">
+              <PropertyRef Name="HashgagUserID" />
+            </Principal>
+            <Dependent Role="Question">
+              <PropertyRef Name="AskedByTwitterUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Tweet">
+          <Key>
+            <PropertyRef Name="HashgagTweetID" />
+          </Key>
+          <Property Name="HashgagTweetID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TweetID" Type="Int64" />
+          <Property Name="TwitterUserID" Type="Int64" />
+          <Property Name="CreatedAt" Type="DateTimeOffset" Precision="7" />
+          <Property Name="FavouriteCount" Type="Int32" />
+          <Property Name="Favourited" Type="Boolean" />
+          <Property Name="IDString" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="InReplyToScreenName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="InReplyToStatusID" Type="Int64" />
+          <Property Name="InReplyToStatusIDString" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="InReplyToUserID" Type="Int64" />
+          <Property Name="InReplyToUserIDString" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Lat" Type="Double" />
+          <Property Name="Long" Type="Double" />
+          <Property Name="RetweetCount" Type="Int32" />
+          <Property Name="Retweeted" Type="Boolean" />
+          <Property Name="Text" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="hashgagModelStoreContainer" CdmEntityContainer="hashgagEntities">
+          <EntitySetMapping Name="CompetitionTweets">
+            <EntityTypeMapping TypeName="hashgagModel.CompetitionTweet">
+              <MappingFragment StoreEntitySet="CompetitionTweet">
+                <ScalarProperty Name="CompetitionTweetID" ColumnName="CompetitionTweetID" />
+                <ScalarProperty Name="QuestionID" ColumnName="QuestionID" />
+                <ScalarProperty Name="TweetID" ColumnName="TweetID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Questions">
+            <EntityTypeMapping TypeName="hashgagModel.Question">
+              <MappingFragment StoreEntitySet="Question">
+                <ScalarProperty Name="QuestionID" ColumnName="QuestionID" />
+                <ScalarProperty Name="Text" ColumnName="Text" />
+                <ScalarProperty Name="Duration" ColumnName="Duration" />
+                <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="AskedByTwitterUser" ColumnName="AskedByTwitterUser" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TwitterUsers">
+            <EntityTypeMapping TypeName="hashgagModel.TwitterUser">
+              <MappingFragment StoreEntitySet="TwitterUser">
+                <ScalarProperty Name="StatusesCount" ColumnName="StatusesCount" />
+                <ScalarProperty Name="ScreenName" ColumnName="ScreenName" />
+                <ScalarProperty Name="ProfileImageURLHttps" ColumnName="ProfileImageURLHttps" />
+                <ScalarProperty Name="ProfileImageURL" ColumnName="ProfileImageURL" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Location" ColumnName="Location" />
+                <ScalarProperty Name="ListedCount" ColumnName="ListedCount" />
+                <ScalarProperty Name="IDStr" ColumnName="IDStr" />
+                <ScalarProperty Name="FriendsCount" ColumnName="FriendsCount" />
+                <ScalarProperty Name="FollowersCount" ColumnName="FollowersCount" />
+                <ScalarProperty Name="FavouritesCount" ColumnName="FavouritesCount" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="TwitterID" ColumnName="TwitterID" />
+                <ScalarProperty Name="HashgagUserID" ColumnName="HashgagUserID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tweets">
+            <EntityTypeMapping TypeName="hashgagModel.Tweet">
+              <MappingFragment StoreEntitySet="Tweet">
+                <ScalarProperty Name="Text" ColumnName="Text" />
+                <ScalarProperty Name="Retweeted" ColumnName="Retweeted" />
+                <ScalarProperty Name="RetweetCount" ColumnName="RetweetCount" />
+                <ScalarProperty Name="Long" ColumnName="Long" />
+                <ScalarProperty Name="Lat" ColumnName="Lat" />
+                <ScalarProperty Name="InReplyToUserIDString" ColumnName="InReplyToUserIDString" />
+                <ScalarProperty Name="InReplyToUserID" ColumnName="InReplyToUserID" />
+                <ScalarProperty Name="InReplyToStatusIDString" ColumnName="InReplyToStatusIDString" />
+                <ScalarProperty Name="InReplyToStatusID" ColumnName="InReplyToStatusID" />
+                <ScalarProperty Name="InReplyToScreenName" ColumnName="InReplyToScreenName" />
+                <ScalarProperty Name="IDString" ColumnName="IDString" />
+                <ScalarProperty Name="Favourited" ColumnName="Favourited" />
+                <ScalarProperty Name="FavouriteCount" ColumnName="FavouriteCount" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="TwitterUserID" ColumnName="TwitterUserID" />
+                <ScalarProperty Name="TweetID" ColumnName="TweetID" />
+                <ScalarProperty Name="HashgagTweetID" ColumnName="HashgagTweetID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

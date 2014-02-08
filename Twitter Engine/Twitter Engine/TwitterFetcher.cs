@@ -27,6 +27,11 @@ namespace Twitter_Engine
         }
         public List<ITweet> GetListOfTweetsWithHashTag(string hashTag)
         {
+           return GetListOfTweetsWithHashTag(hashTag, 0);
+        }
+
+        public List<ITweet> GetListOfTweetsWithHashTag(string hashTag, long maxID)
+        {
             List<ITweet> tweetsForHashtag = new List<ITweet>();
 
             ObjectResponseDelegate responseDelegate = tweetsMatchingQuery =>
@@ -36,8 +41,14 @@ namespace Twitter_Engine
                     tweetsForHashtag.Add(new Tweet(matchingTweet));
                 }
             };
-
-            token.ExecuteGETQuery(SearchQuery(hashTag), responseDelegate);
+            if (maxID == 0)
+            {
+                token.ExecuteGETQuery(SearchQuery(hashTag), responseDelegate);
+            }
+            else
+            {
+                token.ExecuteGETQuery(SearchQueryWithMaxID(hashTag, maxID), responseDelegate);
+            }
 
             return tweetsForHashtag;
         }
@@ -49,7 +60,13 @@ namespace Twitter_Engine
 
         private static string SearchQuery(string hashTag)
         {
-            return String.Format("https://api.twitter.com/1.1/search/tweets.json?q=%23{0}", hashTag);
+            return String.Format("https://api.twitter.com/1.1/search/tweets.json?q=%23{0}&count=100", hashTag);
+        }
+
+        private static string SearchQueryWithMaxID(String hashtag, long maxID)
+        {
+            return String.Format("https://api.twitter.com/1.1/search/tweets.json?max_id={0}&q=%23{1}&count=100", maxID,
+                hashtag);
         }
     }
 

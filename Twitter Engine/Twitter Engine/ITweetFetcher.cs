@@ -10,5 +10,6 @@ namespace Twitter_Engine
     public interface ITweetFetcher
     {
         List<ITweet> GetListOfTweetsWithHashTag(string hashTag);
+        List<ITweet> GetListOfTweetsWithHashTag(string hashTag, long maxID);
     }
 }
