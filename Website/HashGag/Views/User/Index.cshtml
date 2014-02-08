@@ -1,11 +1,11 @@
-﻿
+﻿@model HashGag.Models.TwitterUser
 @{
     ViewBag.Title = "Index";
 }
 
 <div class="competition-container">
     <div class="wireframe" id="user-title">
-        user title
+        Welcome @Html.DisplayFor(mode => mode.ScreenName)
     </div>
 
     <div class="wireframe" id="user-statistics">
@@ -13,7 +13,7 @@
     </div>
 
     <div class="wireframe" id="user-recenttweets">
-        user recent tweets
+        user recent tweets: @Html.DisplayFor(mode => mode.Tweets)
     </div>
 
 </div>

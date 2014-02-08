@@ -13,18 +13,30 @@ namespace HashGag.Controllers
         // GET: /Competition/
         public ActionResult Index()
         {
+            TwitterUser tu = new TwitterUser();
+            tu.ScreenName = "Gary_Claret";
+
             Question question = new Question();
-            question.Text = "Hello Gary";
+            question.Text = "The current Hashgag is: #SadToys";
+            question.AskedByTwitterUser = 3;
+            question.CreationDate = new DateTimeOffset(new DateTime(2014,02,08));
+            question.Duration = 23;
+            question.QuestionID = 1;
+            question.StartDate = new DateTimeOffset(new DateTime(2014,02,08));
+            question.TwitterUser = tu;
+
+            question.TwitterUser = new TwitterUser();
             hashgagEntities db = new hashgagEntities();
 
-            db.Questions.Add(question);
+            
 
+            //db.Questions.Add(question);
 
-            db.SaveChanges();
+            //db.SaveChanges();
 
-            Question newQuestion = db.Questions.First();
+            //Question newQuestion = db.Questions.First();
 
-            return View(newQuestion);
+            return View(question);
         }
 	}
 }

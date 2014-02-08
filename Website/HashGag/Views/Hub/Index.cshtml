@@ -1,4 +1,4 @@
-﻿@model dynamic
+﻿@model HashGag.Models.Question
 
 @{
     ViewBag.Title = "Hub";
@@ -10,6 +10,8 @@
     </div>
     
     <div class="wireframe" id="hub-competition">
-        competition
+        <div id="hub-questiontext">The question is: @Html.DisplayFor(mode => mode.Text) </div>
+        <div id="hub-currentleader">The current leader is: with xx points.</div>
+        <div id="hub-tweets"></div>
     </div>
 </div>

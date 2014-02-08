@@ -7,17 +7,29 @@
 <div class="competition-container">
     <div class="wireframe" id="competition-titlebar">
         titlebar
-        @Html.DisplayFor(mode => mode.Text)
-        <label>Jon</label>
+    </div>
+    <div id="competition-question-container">
+        
     </div>
     <div class="wireframe" id="competition-question">
-        question
+        @Html.DisplayFor(mode => mode.Text)
     </div>
     <div class="wireframe" id="competition-joinorsubmit">
-        joinorsubmit
+        <div id="competition-entry">
+         <div id="competition-submittitle"> Enter here:</div>
+       
+        <div id="competition-submittext">
+            <textarea>Codfather</textarea>
+        </div>
+        </div>
+        
+        
+        <div id="competition-submitbutton"><button id="tweetsubmit">Submit</button></div>
     </div>
     <div class="wireframe" id="competition-standings">
-        standings
+        <div id="competition-league1">TABLE 1</div>
+        <div id="competition-league2">TABLE 2</div>
+        <div id="competition-league3">TABLE 3</div>
     </div>
 
 </div>
