@@ -1,0 +1,6 @@
+﻿@model List<HashGag.Models.Question>
+           
+@foreach (var item in Model)
+{
+    @Html.Partial("_QuestionCard", item)
+}

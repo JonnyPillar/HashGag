@@ -81,7 +81,7 @@ input[type="checkbox"].input-validation-error {
     Cards    
 */
 .questionCard {
-    width: 40%;
+    width: 100%;
     height: 95px;
     padding: 10px;
     margin: 20px auto;
@@ -121,8 +121,11 @@ input[type="checkbox"].input-validation-error {
 .questionInfoPanel {
     width: 75%;
 }
-.questionInfoPanel h3{
-
+.questionInfoPanel h5{
+    font-weight: bold;
     margin-top: 13px;
 }
 
+.hubPanel .hubCol h2{
+    text-align: center;
+}

@@ -201,6 +201,8 @@
     <Compile Include="Models\TwitterUser.cs">
       <DependentUpon>HashGagDatabase.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\ViewModels\CompetitionViewModel.cs" />
+    <Compile Include="Models\ViewModels\HubViewModel.cs" />
     <Compile Include="Models\ViewModels\NavigationBar.cs" />
     <Compile Include="Models\ViewModels\NavigationUserInfoView.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -301,7 +303,10 @@
     <Content Include="Views\Shared\Cards\TweetCard.cshtml" />
     <Content Include="Views\Account\_Login.cshtml" />
     <Content Include="Views\Shared\_Invite.cshtml" />
-    <Content Include="Views\Home\_QuestionCard.cshtml" />
+    <Content Include="Views\Hub\_QuestionCard.cshtml" />
+    <Content Include="Views\Hub\_QuestionListView.cshtml" />
+    <Content Include="Views\Competition\_CompQuestionCard.cshtml" />
+    <Content Include="Views\Competition\CompQuestionListView.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

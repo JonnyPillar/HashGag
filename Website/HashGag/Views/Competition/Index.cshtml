@@ -1,10 +1,27 @@
-﻿@model HashGag.Models.Question
+﻿@model HashGag.Models.ViewModels.CompetitionViewModel
 
 @{
     ViewBag.Title = "Competition";
 }
 
-<div class="competition-container">
+
+<div class="hubPanel container">
+    <div class="hubCol col-sm-4 col-xs-1">
+        <h2>Filter Title</h2>
+        @Html.Partial("CompQuestionListView", Model.ColumnOneQuestions)
+    </div>
+    <div class="hubCol col-sm-4 col-xs-1">
+        <h2>Filter Title</h2>
+        @Html.Partial("CompQuestionListView", Model.ColumnTwoQuestions)
+    </div>
+    <div class="hubCol col-sm-4 col-xs-1">
+        <h2>Filter Title</h2>
+        @Html.Partial("CompQuestionListView", Model.ColumnThreeQuestions)
+    </div>
+</div>
+
+
+@*<div class="competition-container">
     <div class="wireframe" id="competition-titlebar">
         titlebar
     </div>
@@ -32,4 +49,4 @@
         <div id="competition-league3">TABLE 3</div>
     </div>
 
-</div>
+</div>*@

@@ -1,8 +1,7 @@
 ﻿@model HashGag.Models.Question
 
-Hello
-
 <div class="questionCard">
+
     <div class="questionScorePanel">
         <span>42</span>
     </div>
@@ -10,8 +9,10 @@ Hello
         <img src="@Url.Content(Model.TwitterUser.ProfileImageURL)" alt="Question Image" />
     </div>
     <div class="questionInfoPanel">
-        <h3>@Html.DisplayFor(model => model.Text)</h3>
+        <h5>@Html.DisplayFor(model => model.Text)</h5>
         <div>@Html.DisplayNameFor(model => model.EndDate)</div>
     </div>
+
 </div>
+
 
