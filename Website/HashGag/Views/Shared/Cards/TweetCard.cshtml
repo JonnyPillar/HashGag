@@ -1,20 +1,20 @@
 ﻿@model HashGag.Models.Tweet
 
-<div id="tweetcard-container">
-    <div id="tweetcard-profileimage">
-         <img src="@Html.DisplayFor(model => model.TwitterUser.ProfileImageURL)"/>
+<div id="tweetcard-profileimage">
+    <div id="tweetcard-ImagePanel">
+         <img width="84" height="84" src="@Html.DisplayFor(model => model.TwitterUser.ProfileImageURL)"/>
     </div>
    
     <div id="tweetcard-screenname">
         @Html.DisplayFor(model => model.TwitterUser.ScreenName)
     </div>
             
-    <div id="tweetcard-tweet">
+    <div id="tweetcard-InfoPanel">
         @Html.DisplayFor(model => model.Text)
     </div>
     
-    <div id ="tweetcard-retweets">
-         @Html.DisplayFor(model => model.RetweetCount)
+    <div id ="tweet-card-ScorePanel">
+         RT @Html.DisplayFor(model => model.RetweetCount)
     </div>
               
     

@@ -18,7 +18,8 @@ namespace HashGag.Controllers
             //return this.View(navigationBar);
 
             Tweet tweet = new Tweet();
-            tweet.Text = "Plopopoly #SadToys";
+            tweet.Text =
+                "Plopopoly PlopopolyPlopopoly";
             tweet.TwitterUser = new TwitterUser();
             tweet.TwitterUser.ScreenName = "Gary_Claret";
             tweet.TwitterUser.ProfileImageURL = "https://pbs.twimg.com/profile_images/96779181/chelsea2.jpg";
