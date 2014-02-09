@@ -56,20 +56,31 @@ namespace HashGag.Controllers
             return View(model);
         }
 
-        public ActionResult Details(int questionID)
+        [HttpGet]
+        public ActionResult Details(int id)
         {
             hashgagEntities db = new hashgagEntities();
-            Question question = db.Questions.FirstOrDefault(model => model.QuestionID == questionID);
 
-            List<CompetitionTweet> tweetList = question.CompetitionTweets.ToList();
+            var query = from q in db.Questions
+                        join cpt in db.CompetitionTweets on q.QuestionID equals cpt.QuestionID
+                        join t in db.Tweets on cpt.TweetID equals t.TweetID
+                        join tu in db.TwitterUsers on t.TwitterUserID equals tu.TwitterID
+                        where q.QuestionID == id
 
-            List<Tweet> list = new List<Tweet>();
+                        select new { q, t, tu, cpt };
 
-            foreach (var item in tweetList)
+            List<CompTweetModel> list = new List<CompTweetModel>();
+
+            foreach (var item in query)
             {
-                Tweet tweet = db.Tweets.FirstOrDefault(mode => mode.TweetID == item.TweetID);
-                list.Add(tweet);
+                Tweet tweet = item.t;
+                TwitterUser tUser = item.tu;
+                
+                CompTweetModel cTUser = new CompTweetModel(tweet, tUser);
+
+                list.Add(cTUser);
             }
+
             CompetitionViewModel cmodel = new CompetitionViewModel(list, list, list);
             return View("Index", cmodel);
         }

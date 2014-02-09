@@ -5,10 +5,10 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="9eda3c0ef58944fe86c3a3ac1f4d67d6" Name="Diagram1" ZoomLevel="81">
-        <EntityTypeShape EntityType="hashgagModel.CompetitionTweet" Width="1.5" PointX="5.25" PointY="2.125" />
+        <EntityTypeShape EntityType="hashgagModel.CompetitionTweet" Width="1.5" PointX="5.25" PointY="1.25" />
         <EntityTypeShape EntityType="hashgagModel.IdentityUserLogin" Width="1.5" PointX="2.75" PointY="5.75" />
         <EntityTypeShape EntityType="hashgagModel.Question" Width="1.5" PointX="3" PointY="1.75" />
-        <EntityTypeShape EntityType="hashgagModel.Tweet" Width="1.5" PointX="5.75" PointY="4.75" />
+        <EntityTypeShape EntityType="hashgagModel.Tweet" Width="1.5" PointX="8.25" PointY="2" />
         <EntityTypeShape EntityType="hashgagModel.TwitterUser" Width="1.5" PointX="0.75" PointY="1" />
         <AssociationConnector Association="hashgagModel.FK__Competiti__Quest__34C8D9D1" />
         <AssociationConnector Association="hashgagModel.FK__Question__AskedB__2A4B4B5E" />

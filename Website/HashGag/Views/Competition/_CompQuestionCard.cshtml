@@ -1,16 +1,16 @@
-﻿@model HashGag.Models.Tweet
+﻿@model HashGag.Models.ViewModels.CompTweetModel
 
 <div class="questionCard">
 
     <div class="questionScorePanel">
-        <span>42</span>
+        <span>@Model.tweet.RetweetCount</span>
     </div>
     <div class="questionImagePanel">
-        <img src="@Url.Content(Model.TwitterUser.ProfileImageURL)" alt="Question Image" />
+        <img src="@Url.Content(Model.user.ProfileImageURL)" alt="Question Image" />
     </div>
     <div class="questionInfoPanel">
-        <h5>@Html.DisplayFor(model => model.TwitterUser)</h5>
-        <div>@Html.DisplayNameFor(model => model.EndDate)</div>
+        <h5>@Html.DisplayFor(model => model.user.ScreenName)</h5>
+        <div>@Html.DisplayNameFor(model => model.tweet.Text)</div>
     </div>
 
 </div>
