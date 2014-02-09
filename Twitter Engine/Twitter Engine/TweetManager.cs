@@ -24,10 +24,13 @@ namespace Twitter_Engine
                 List<ITweet> tweets = new List<ITweet>();
                 List<ITweet> currentTweetFetch = tweetFetcher.GetListOfTweetsWithHashTag(hashtag);
                 tweets.AddRange(currentTweetFetch);
-                while (currentTweetFetch.Count > 0)
+                int numberofCalls = 0;
+                while (currentTweetFetch.Count > 0 && numberofCalls <=25)
                 {
-                    currentTweetFetch = tweetFetcher.GetListOfTweetsWithHashTag(hashtag, (long)currentTweetFetch.Last().Id - 1);
-                    tweets.AddRange(currentTweetFetch);
+                        currentTweetFetch = tweetFetcher.GetListOfTweetsWithHashTag(hashtag,
+                            (long) currentTweetFetch.Last().Id - 1);
+                        tweets.AddRange(currentTweetFetch);
+                    numberofCalls++;
                 }
                 ProcessTweets(tweets, currentQuestion.QuestionID);
             }
@@ -37,13 +40,22 @@ namespace Twitter_Engine
 
         public void ProcessTweets(List<ITweet> tweets, int currentQuestionID)
         {
+            List<TwitterUser> addedUsers = db.TwitterUsers.ToList();
             foreach (ITweet tweet in tweets)
             {
-                var twitterUser = db.TwitterUsers
-                    .FirstOrDefault(tu => tu.TwitterID == tweet.Creator.Id);
-                if (twitterUser == null)
+                TwitterUser newUser = new TwitterUser(tweet);
+                bool alreadyAdded = false;
+               foreach (TwitterUser user in addedUsers)
                 {
-                    db.TwitterUsers.Add(new TwitterUser(tweet));
+                    if (user.TwitterID == newUser.TwitterID)
+                    {
+                        alreadyAdded = true;
+                    }
+                }
+                if(alreadyAdded == false)
+                {
+                    db.TwitterUsers.Add(newUser);
+                    addedUsers.Add(newUser);
                 }
                 var lookupTweet = db.Tweets
                     .FirstOrDefault(t => t.TweetID == tweet.Id);
@@ -57,12 +69,17 @@ namespace Twitter_Engine
                 }
                 else
                 {
-
-                    lookupTweet.RetweetCount = tweet.RetweetCount;
+                    if (lookupTweet.RetweetCount != tweet.RetweetCount)
+                    {
+                        lookupTweet.RetweetCount = tweet.RetweetCount;
+                    }
                 }
+               
+            }
+            if (db.ChangeTracker.HasChanges())
+            {
                 db.SaveChanges();
             }
-            
             Console.WriteLine("Committed Changes");
         }
     }

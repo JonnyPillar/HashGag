@@ -27,7 +27,7 @@ namespace Twitter_Engine
         public static void FetchTweets()
         {
             TwitterFetcher fetcher = new TwitterFetcher();
-            TweetManager cTweet = new TweetManager(fetcher);
+            new TweetManager(fetcher);
         }
     }
 }
