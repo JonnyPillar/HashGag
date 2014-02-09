@@ -82,6 +82,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\Partials\CompetitionTweet.cs" />
     <Compile Include="Models\Partials\Tweet.cs" />
     <Compile Include="Models\Partials\TwitterUser.cs" />
     <Compile Include="Models\TwitterUser.cs">

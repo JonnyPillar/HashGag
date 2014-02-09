@@ -40,9 +40,9 @@ public partial class Question
 
 
 
-    public virtual ICollection<CompetitionTweet> CompetitionTweets { get; set; }
-
     public virtual TwitterUser TwitterUser { get; set; }
+
+    public virtual ICollection<CompetitionTweet> CompetitionTweets { get; set; }
 
 }
 

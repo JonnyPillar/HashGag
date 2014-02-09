@@ -17,6 +17,7 @@ namespace Twitter_Engine
             var questions = db.Questions
                 .Where (q=> q.StartDate <= DateTime.Now )
                 .Where(q=> q.EndDate >= DateTime.Now);
+
             foreach (Question currentQuestion in questions )
             {
                 string hashtag = currentQuestion.Text;
@@ -28,13 +29,13 @@ namespace Twitter_Engine
                     currentTweetFetch = tweetFetcher.GetListOfTweetsWithHashTag(hashtag, (long)currentTweetFetch.Last().Id - 1);
                     tweets.AddRange(currentTweetFetch);
                 }
-                ProcessTweets(tweets);
+                ProcessTweets(tweets, currentQuestion.QuestionID);
             }
 
            
         }
 
-        public void ProcessTweets(List<ITweet> tweets)
+        public void ProcessTweets(List<ITweet> tweets, int currentQuestionID)
         {
             foreach (ITweet tweet in tweets)
             {
@@ -48,15 +49,20 @@ namespace Twitter_Engine
                     .FirstOrDefault(t => t.TweetID == tweet.Id);
                 if (lookupTweet == null)
                 {
-                    db.Tweets.Add(new Tweet(tweet));
+                    if (!tweet.Text.StartsWith("RT"))
+                    {
+                        db.Tweets.Add(new Tweet(tweet));
+                        db.CompetitionTweets.Add(new CompetitionTweet(tweet, currentQuestionID));
+                    }
                 }
                 else
                 {
 
                     lookupTweet.RetweetCount = tweet.RetweetCount;
                 }
+                db.SaveChanges();
             }
-            db.SaveChanges();
+            
             Console.WriteLine("Committed Changes");
         }
     }

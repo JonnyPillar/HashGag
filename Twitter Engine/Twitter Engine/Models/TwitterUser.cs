@@ -21,8 +21,6 @@ public partial class TwitterUser
     public TwitterUser()
     {
 
-        this.CompetitionTweets = new HashSet<CompetitionTweet>();
-
         this.Questions = new HashSet<Question>();
 
     }
@@ -59,8 +57,6 @@ public partial class TwitterUser
     public Nullable<int> StatusesCount { get; set; }
 
 
-
-    public virtual ICollection<CompetitionTweet> CompetitionTweets { get; set; }
 
     public virtual ICollection<Question> Questions { get; set; }
 

@@ -11,7 +11,7 @@
           </Key>
           <Property Name="CompetitionTweetID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="QuestionID" Type="int" />
-          <Property Name="TweetID" Type="int" />
+          <Property Name="TweetID" Type="bigint" />
         </EntityType>
         <EntityType Name="Question">
           <Key>
@@ -78,18 +78,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Competiti__Tweet__35BCFE0A">
-          <End Role="TwitterUser" Type="Self.TwitterUser" Multiplicity="0..1" />
-          <End Role="CompetitionTweet" Type="Self.CompetitionTweet" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="TwitterUser">
-              <PropertyRef Name="HashgagUserID" />
-            </Principal>
-            <Dependent Role="CompetitionTweet">
-              <PropertyRef Name="TweetID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK__Question__AskedB__2A4B4B5E">
           <End Role="TwitterUser" Type="Self.TwitterUser" Multiplicity="0..1" />
           <End Role="Question" Type="Self.Question" Multiplicity="*" />
@@ -111,10 +99,6 @@
             <End Role="Question" EntitySet="Question" />
             <End Role="CompetitionTweet" EntitySet="CompetitionTweet" />
           </AssociationSet>
-          <AssociationSet Name="FK__Competiti__Tweet__35BCFE0A" Association="Self.FK__Competiti__Tweet__35BCFE0A">
-            <End Role="TwitterUser" EntitySet="TwitterUser" />
-            <End Role="CompetitionTweet" EntitySet="CompetitionTweet" />
-          </AssociationSet>
           <AssociationSet Name="FK__Question__AskedB__2A4B4B5E" Association="Self.FK__Question__AskedB__2A4B4B5E">
             <End Role="TwitterUser" EntitySet="TwitterUser" />
             <End Role="Question" EntitySet="Question" />
@@ -124,32 +108,18 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="hashgagModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="CompetitionTweet">
-          <Key>
-            <PropertyRef Name="CompetitionTweetID" />
-          </Key>
-          <Property Name="CompetitionTweetID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="QuestionID" Type="Int32" />
-          <Property Name="TweetID" Type="Int32" />
-          <NavigationProperty Name="TwitterUser" Relationship="hashgagModel.FK__Competiti__Tweet__35BCFE0A" FromRole="CompetitionTweet" ToRole="TwitterUser" />
-          <NavigationProperty Name="Question" Relationship="hashgagModel.FK__Competiti__Quest__34C8D9D1" FromRole="CompetitionTweet" ToRole="Question" />
-        </EntityType>
         <EntityContainer Name="hashgagEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="CompetitionTweets" EntityType="Self.CompetitionTweet" />
           <EntitySet Name="TwitterUsers" EntityType="hashgagModel.TwitterUser" />
-          <AssociationSet Name="FK__Competiti__Tweet__35BCFE0A" Association="hashgagModel.FK__Competiti__Tweet__35BCFE0A">
-            <End Role="TwitterUser" EntitySet="TwitterUsers" />
-            <End Role="CompetitionTweet" EntitySet="CompetitionTweets" />
-          </AssociationSet>
           <EntitySet Name="Tweets" EntityType="hashgagModel.Tweet" />
           <EntitySet Name="Questions" EntityType="hashgagModel.Question" />
-          <AssociationSet Name="FK__Competiti__Quest__34C8D9D1" Association="hashgagModel.FK__Competiti__Quest__34C8D9D1">
-            <End Role="Question" EntitySet="Questions" />
-            <End Role="CompetitionTweet" EntitySet="CompetitionTweets" />
-          </AssociationSet>
           <AssociationSet Name="FK__Question__AskedB__2A4B4B5E" Association="hashgagModel.FK__Question__AskedB__2A4B4B5E">
             <End Role="TwitterUser" EntitySet="TwitterUsers" />
             <End Role="Question" EntitySet="Questions" />
+          </AssociationSet>
+          <EntitySet Name="CompetitionTweets" EntityType="hashgagModel.CompetitionTweet" />
+          <AssociationSet Name="FK__Competiti__Quest__34C8D9D1" Association="hashgagModel.FK__Competiti__Quest__34C8D9D1">
+            <End Role="Question" EntitySet="Questions" />
+            <End Role="CompetitionTweet" EntitySet="CompetitionTweets" />
           </AssociationSet>
           </EntityContainer>
         <EntityType Name="TwitterUser">
@@ -171,21 +141,8 @@
           <Property Name="ProfileImageURLHttps" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="ScreenName" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
           <Property Name="StatusesCount" Type="Int32" />
-          <NavigationProperty Name="CompetitionTweets" Relationship="hashgagModel.FK__Competiti__Tweet__35BCFE0A" FromRole="TwitterUser" ToRole="CompetitionTweet" />
           <NavigationProperty Name="Questions" Relationship="hashgagModel.FK__Question__AskedB__2A4B4B5E" FromRole="TwitterUser" ToRole="Question" />
         </EntityType>
-        <Association Name="FK__Competiti__Tweet__35BCFE0A">
-          <End Type="hashgagModel.TwitterUser" Role="TwitterUser" Multiplicity="0..1" />
-          <End Type="hashgagModel.CompetitionTweet" Role="CompetitionTweet" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="TwitterUser">
-              <PropertyRef Name="HashgagUserID" />
-            </Principal>
-            <Dependent Role="CompetitionTweet">
-              <PropertyRef Name="TweetID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityType Name="Tweet">
           <Key>
             <PropertyRef Name="HashgagTweetID" />
@@ -218,8 +175,29 @@
           <Property Name="StartDate" Type="DateTimeOffset" Precision="7" />
           <Property Name="AskedByHashGagUser" Type="Int32" />
           <Property Name="EndDate" Type="DateTimeOffset" Precision="7" />
-          <NavigationProperty Name="CompetitionTweets" Relationship="hashgagModel.FK__Competiti__Quest__34C8D9D1" FromRole="Question" ToRole="CompetitionTweet" />
           <NavigationProperty Name="TwitterUser" Relationship="hashgagModel.FK__Question__AskedB__2A4B4B5E" FromRole="Question" ToRole="TwitterUser" />
+          <NavigationProperty Name="CompetitionTweets" Relationship="hashgagModel.FK__Competiti__Quest__34C8D9D1" FromRole="Question" ToRole="CompetitionTweet" />
+        </EntityType>
+        <Association Name="FK__Question__AskedB__2A4B4B5E">
+          <End Type="hashgagModel.TwitterUser" Role="TwitterUser" Multiplicity="0..1" />
+          <End Type="hashgagModel.Question" Role="Question" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TwitterUser">
+              <PropertyRef Name="HashgagUserID" />
+            </Principal>
+            <Dependent Role="Question">
+              <PropertyRef Name="AskedByHashGagUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="CompetitionTweet">
+          <Key>
+            <PropertyRef Name="CompetitionTweetID" />
+          </Key>
+          <Property Name="CompetitionTweetID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="QuestionID" Type="Int32" />
+          <Property Name="TweetID" Type="Int64" />
+          <NavigationProperty Name="Question" Relationship="hashgagModel.FK__Competiti__Quest__34C8D9D1" FromRole="CompetitionTweet" ToRole="Question" />
         </EntityType>
         <Association Name="FK__Competiti__Quest__34C8D9D1">
           <End Type="hashgagModel.Question" Role="Question" Multiplicity="0..1" />
@@ -233,33 +211,12 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Question__AskedB__2A4B4B5E">
-          <End Type="hashgagModel.TwitterUser" Role="TwitterUser" Multiplicity="0..1" />
-          <End Type="hashgagModel.Question" Role="Question" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="TwitterUser">
-              <PropertyRef Name="HashgagUserID" />
-            </Principal>
-            <Dependent Role="Question">
-              <PropertyRef Name="AskedByHashGagUser" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="hashgagModelStoreContainer" CdmEntityContainer="hashgagEntities">
-          <EntitySetMapping Name="CompetitionTweets">
-            <EntityTypeMapping TypeName="hashgagModel.CompetitionTweet">
-              <MappingFragment StoreEntitySet="CompetitionTweet">
-                <ScalarProperty Name="CompetitionTweetID" ColumnName="CompetitionTweetID" />
-                <ScalarProperty Name="QuestionID" ColumnName="QuestionID" />
-                <ScalarProperty Name="TweetID" ColumnName="TweetID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="TwitterUsers">
             <EntityTypeMapping TypeName="hashgagModel.TwitterUser">
               <MappingFragment StoreEntitySet="TwitterUser">
@@ -313,6 +270,15 @@
                 <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
                 <ScalarProperty Name="Text" ColumnName="Text" />
                 <ScalarProperty Name="QuestionID" ColumnName="QuestionID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CompetitionTweets">
+            <EntityTypeMapping TypeName="hashgagModel.CompetitionTweet">
+              <MappingFragment StoreEntitySet="CompetitionTweet">
+                <ScalarProperty Name="TweetID" ColumnName="TweetID" />
+                <ScalarProperty Name="QuestionID" ColumnName="QuestionID" />
+                <ScalarProperty Name="CompetitionTweetID" ColumnName="CompetitionTweetID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
