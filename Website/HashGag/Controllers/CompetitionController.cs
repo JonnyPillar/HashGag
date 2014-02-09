@@ -7,6 +7,7 @@ using System.Web.Mvc;
 using HashGag.Models;
 using HashGag.Models.ViewModels;
 using Microsoft.Ajax.Utilities;
+using WebGrease.Css.Ast.Selectors;
 
 namespace HashGag.Controllers
 {
@@ -84,10 +85,57 @@ namespace HashGag.Controllers
                 list.Add(cTUser);
             }
 
-            List<CompTweetModel> tempOrderedTweets = new List<CompTweetModel>();
-            tempOrderedTweets.AddRange(from atweet in list orderby atweet.tweet.RetweetCount descending select atweet);
-           
-            CompetitionViewModel cmodel = new CompetitionViewModel(question, tempOrderedTweets, list, list);
+            List<CompTweetModel> highestscoringOrderedTweets = new List<CompTweetModel>();
+            List<CompTweetModel>   mostRecentOrderedTweets = new List<CompTweetModel>();
+            List<CompTweetModel>   myOrdereedTweets = new List<CompTweetModel>();
+
+            highestscoringOrderedTweets.AddRange(from atweet in list orderby atweet.tweet.RetweetCount descending select atweet);
+            mostRecentOrderedTweets.AddRange(from atweet in list orderby atweet.tweet.CreatedAt descending select atweet);
+
+            if (User.Identity.IsAuthenticated)
+            {
+                int FirstInstanceOfUser = highestscoringOrderedTweets.IndexOf((from alltweets in highestscoringOrderedTweets
+                                           where alltweets.user.ScreenName == "bendywalker"
+                                           orderby alltweets.tweet.RetweetCount descending
+                                           select alltweets).FirstOrDefault());
+
+                int totalNeeded = highestscoringOrderedTweets.Count >= 10
+                    ? 10
+                    : highestscoringOrderedTweets.Count;
+
+
+                if (FirstInstanceOfUser - 5 < 0)
+                {
+                    FirstInstanceOfUser = FirstInstanceOfUser - (FirstInstanceOfUser - 5);
+                }
+                if (FirstInstanceOfUser + 5 > highestscoringOrderedTweets.Count)
+                {
+                    FirstInstanceOfUser = FirstInstanceOfUser - ((FirstInstanceOfUser + 5) - highestscoringOrderedTweets.Count);
+                }
+
+                if (totalNeeded < 10)
+                {
+                    myOrdereedTweets = highestscoringOrderedTweets;
+                }
+                else
+                {
+                    foreach (CompTweetModel atweetmodel in highestscoringOrderedTweets)
+                    {
+                        if (highestscoringOrderedTweets.IndexOf(atweetmodel) >= (FirstInstanceOfUser - 5)
+                            && highestscoringOrderedTweets.IndexOf(atweetmodel) < (FirstInstanceOfUser + 5))
+                        {
+                            myOrdereedTweets.Add(atweetmodel);
+                        }
+                    } 
+                }
+            }
+            ;
+
+
+            Question question1 = new Question();
+
+            CompetitionViewModel cmodel = new CompetitionViewModel(question1,highestscoringOrderedTweets, myOrdereedTweets, mostRecentOrderedTweets);
+
             return View("Index", cmodel);
         }
 	}
