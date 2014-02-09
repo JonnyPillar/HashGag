@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html>
 @Html.Partial("_Header")
+@Scripts.Render("~/bundles/jquery")
     <body>
         @Html.Partial("_Navigation")
         <div style="clear: both; height: 37px;"></div>
@@ -11,7 +12,7 @@
             @Html.Partial("_Footer")
         </div>
     </body>
-@Scripts.Render("~/bundles/jquery")
+
 @Scripts.Render("~/bundles/bootstrap")
 @RenderSection("scripts", required: false)
 </html>

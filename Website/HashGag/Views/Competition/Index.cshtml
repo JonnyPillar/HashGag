@@ -12,10 +12,52 @@
         </div>
 
     </div>
+    @*<script>$.ajax({
+    type: 'POST',
+    url: '@Url.Content("Controller/Complitition/LoadColumn/")',
+    data: {
+    id: Model.ColumnOneQuestions
+    },
+    success: function (data) {
+        alert("hshdsdhfhdf");
+    $('.temp').innerHTML = data;
+    }
+});</script>*@
     
-    <div class="hubCol col-sm-4 col-xs-1">
+    <script type="text/javascript">
+        jQuery(document).ready(function () {
+            alert("Hi");
+            var postData = @Model.Question.QuestionID + ",topRank";
+
+            jQuery.ajax({
+                type: 'POST',
+                url: '@Url.Content("Controller/Complitition/LoadColumn/")',
+                data: {
+                    id: postData
+                },
+                success: function (data) {
+                    alert("hshdsdhfhdf");
+                    $('.temp').innerHTML = data;
+                }
+
+
+
+
+
+            @*jQuery.post("ManageOvertimes", postData, function () {
+                alert("By");
+                jQuery('.temp').Load('@Url.Action("LoadColumn", "Competition", 1)');
+            });*@
+
+        });
+        
+
+
+    </script>
+
+    <div class="hubCol temp col-sm-4 col-xs-1">
         <h2>Top Tweets</h2>
-        @Html.Partial("CompQuestionListView", Model.ColumnOneQuestions)
+        @*@Html.Partial("CompQuestionListView", Model.ColumnOneQuestions)*@
     </div>
     <div class="hubCol col-sm-4 col-xs-1">
         <h2>My Ranking</h2>
