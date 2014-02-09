@@ -1,6 +1,33 @@
 ﻿body {
 }
-/*
+img.question-displayed {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 15px;
+}
+#submitquestion-textfield {
+    padding-top: 13px;
+    padding-left: 43px;
+    padding-bottom: 11px;
+    padding-left: 10px;
+    text-align: center;
+}
+
+#submitquestion-textfield textarea {
+    width: 339px;
+    height: 110px;
+    border-color: #42a8f2;
+    color: #42a8f2;
+    resize: none;
+    font-size: 13px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    max-width: 340px;
+    font-size: 20px;
+}
+    /*
     Cards    
 */
 #tweetcard-profileimage {
@@ -68,14 +95,14 @@
     padding-bottom: 7px;
     padding-left: 15px;
 }
-#invite-twitter-handle {
+.invite-twitter-handle {
     padding-top: 13px;
     padding-left: 43px;
     padding-bottom: 11px;
     padding-left: 45px;
 }
 
-#invite-twitter-handle textarea {
+.invite-twitter-handle textarea {
     width: 339px;
     border-color: #42a8f2;
     resize: none;
@@ -157,12 +184,12 @@
 
 #user-title {
     font-size: 32px;
-    text-align: center;
-    font-weight: bolder;
-    font-family: sans-serif;
-    color: cornflowerblue;
-    padding-bottom: 14px;
-    padding-top: 14px;
+text-align: center;
+font-weight: bolder;
+font-family: helvetica;
+color: cornflowerblue;
+padding-bottom: 14px;
+padding-top: 14px;
 }
 
 #competition-joinorsubmit {

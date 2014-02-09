@@ -4,16 +4,16 @@
 }
 
 <div class="competition-container">
-    <div class="wireframe" id="user-title">
-        Welcome @Html.DisplayFor(mode => mode.ScreenName)
+    <div id="user-title">
+        Welcome, @Html.DisplayFor(mode => mode.ScreenName) feel free to enter your own Hashgags in the box below:
     </div>
 
-    <div class="wireframe" id="user-statistics">
-        user statistics
+    <div id="submitquestion-textfield">
+        <textarea maxlength="140">e.g. #FishNFilms</textarea>
     </div>
 
-    <div class="wireframe" id="user-recenttweets">
-        user recent tweets: @Html.DisplayFor(mode => mode.Tweets)
+    <div id="submitquestion-button">
+        <a><img class="question-displayed" src="/Content/Images/Submit_button.png"/></a>
     </div>
 
 </div>
