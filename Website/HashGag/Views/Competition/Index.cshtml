@@ -25,30 +25,21 @@
 });</script>*@
     
     <script type="text/javascript">
-        jQuery(document).ready(function () {
+        jQuery(document).ready(function() {
             alert("Hi");
             var postData = @Model.Question.QuestionID + ",topRank";
 
             jQuery.ajax({
                 type: 'POST',
-                url: '@Url.Content("Controller/Complitition/LoadColumn/")',
+                url: '@Url.Content("1")',
                 data: {
                     id: postData
                 },
-                success: function (data) {
+                success: function(data) {
                     alert("hshdsdhfhdf");
                     $('.temp').innerHTML = data;
                 }
-
-
-
-
-
-            @*jQuery.post("ManageOvertimes", postData, function () {
-                alert("By");
-                jQuery('.temp').Load('@Url.Action("LoadColumn", "Competition", 1)');
-            });*@
-
+            });
         });
         
 

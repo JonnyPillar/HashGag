@@ -307,7 +307,7 @@
     <Content Include="Views\User\Index.cshtml" />
     <Content Include="Views\Standings\Index.cshtml" />
     <Content Include="Views\Shared\Cards\TweetCard.cshtml" />
-    <Content Include="Views\Account\_Login.cshtml" />
+    <Content Include="Views\Shared\_Login.cshtml" />
     <Content Include="Views\Shared\_Invite.cshtml" />
     <Content Include="Views\Hub\_QuestionCard.cshtml" />
     <Content Include="Views\Hub\_QuestionListView.cshtml" />
