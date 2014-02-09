@@ -1,5 +1,63 @@
 ﻿body {
 }
+/*
+    Cards    
+*/
+#tweetcard-profileimage {
+    width: 40%;
+    height: 118px;
+    padding: 0px;
+    margin: 20px auto;
+    clear: both;
+    border-bottom: 1px solid #ccc;
+}
+
+#tweetcard-screenname {
+    font-size: 18px;
+}
+
+    #tweetcard-profileimage #tweetcard-ImagePanel {
+        float: left;
+        margin: 0 20px 0 0;
+        clear: left;
+    }
+
+        #tweetcard-profileimage #tweetcard-ImagePanel img {
+            -webkit-border-radius: 42px;
+            -moz-border-radius: 42px;
+            border-radius: 42px;
+        }
+
+        #tweetcard-profileimage #tweetcard-InfoPanel {
+            font-size: 12px;
+        }
+
+    #tweetcard-profileimage #tweet-card-ScorePanel {
+        float: right;
+        width: 30%;
+        text-align: center;
+        font-size: 26px;
+    }
+
+        #tweetcard-profileimage #tweetcard-ScorePanel span {
+            width: 84px;
+            height: 24px;
+            padding: 15px 25px;
+            margin-left: 70px;
+            display: block;
+            text-align: left;
+            font-size: 30px;
+            color: #42a8f2;
+        }
+
+.questionInfoPanel {
+    width: 75%;
+}
+.questionInfoPanel h3{
+
+    margin-top: 13px;
+}
+
 #invite-logo {
     padding-left: 173px;
     padding-top: 15px;
@@ -132,20 +190,4 @@
     padding-top: 5px;
     height: 77px;
     font-size: 47px;
-}
-
-#competition-league1{
-
-}
-
-#competition-league2{
-
-}
-
-#competition-standings {
-
-}
-
-#competition-league3{
-
 }
