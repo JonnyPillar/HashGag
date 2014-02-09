@@ -5,6 +5,10 @@
     font-family: "letter-gothic-std",sans-serif;
 }
 
+h1 {
+    font-weight: normal;
+}
+
 /* Set padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
