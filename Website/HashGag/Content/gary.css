@@ -1,5 +1,63 @@
 ﻿body {
 }
+#invite-logo {
+    padding-left: 173px;
+    padding-top: 15px;
+    padding-bottom: 22px;
+}
+
+#invite-line {
+    padding-bottom: 7px;
+    padding-left: 15px;
+}
+#invite-twitter-handle {
+    padding-top: 13px;
+    padding-left: 43px;
+    padding-bottom: 11px;
+    padding-left: 45px;
+}
+
+#invite-twitter-handle textarea {
+    width: 339px;
+    border-color: #42a8f2;
+    resize: none;
+    color: #42a8f2;
+    font-size: 13px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    max-width: 340px;
+    height: 55px;
+    font-size: 22px;
+}
+
+#invite-tweet-message {
+    padding-left: 45px;
+    padding-bottom: 13px;
+}
+
+#invite-tweet-message textarea{
+    width: 339px;
+    height: 155px;
+    border-color: #42a8f2;
+    color: #42a8f2;
+    resize: none;
+    font-size: 13px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    max-width: 340px;
+    font-size: 20px;
+}
+
+#invite-button {
+    padding-left: 35px;
+}
+
+#invite-container { 
+    margin: 0 auto;
+    width: 34%;
+}
 
 #login-container {
     margin: 0 auto;
