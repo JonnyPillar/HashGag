@@ -3,13 +3,16 @@
 <!DOCTYPE html>
 <html>
 @Html.Partial("_Header")
-<body>
-    @Html.Partial("_Navigation")
-    <div class="container body-content">
-        @RenderBody()
-        @Html.Partial("_Footer")
-    </div>
-</body>
+    <body>
+        @Html.Partial("~/Views/Account/_Login.cshtml")
+        
+
+        @Html.Partial("_Navigation")
+        <div class="container body-content">
+            @RenderBody()
+            @Html.Partial("_Footer")
+        </div>
+    </body>
 @Scripts.Render("~/bundles/jquery")
 @Scripts.Render("~/bundles/bootstrap")
 @RenderSection("scripts", required: false)

@@ -1,5 +1,26 @@
 ﻿body {
 }
+
+#login-container {
+    margin: 0 auto;
+    width: 14%;
+}
+
+#login-button {
+    padding-top: 37px;
+    padding-bottom: 25px;
+}
+
+#login-line {
+    padding-left: 10px;
+}
+
+#login-logo {
+    padding-left: 20px;
+    padding-bottom: 24px;
+    padding-top: 19px;
+}
+
 .competition-container {
     margin: 0 auto;
     width: 90%;
@@ -38,7 +59,8 @@
 }
 
 #competition-submittext textarea {
-    height: 68px;
+    height: 12%;
+    width: 35%;
 }
 
 #competition-submittitle {
@@ -51,7 +73,6 @@
 #competition-submitbutton button {
     padding-top: 5px;
     height: 77px;
-    width: 490px;
     font-size: 47px;
 }
 
