@@ -4,7 +4,7 @@
 <a href="/Competition/Details/@Model.QuestionID">
     <div class="questionCard">
         <div class="questionScorePanel">
-            <span>42</span>
+            <span>@Model.CompetitionTweets.Count</span>
         </div>
         <div class="questionImagePanel">
             @*<img src="@Url.Content(Model.TwitterUser.ProfileImageURL)" alt="Question Image" />*@
@@ -13,7 +13,7 @@
         <div class="questionInfoPanel">
             
             <h5>@Html.DisplayFor(model => model.Text)</h5>
-            <div>@Html.DisplayText(model => model.EndDate.Value.ToString())</div>
+            <div>@Html.DisplayFor(model => model.EndDate)</div>
         </div>
     </div>
 </a>

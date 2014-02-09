@@ -1,6 +1,7 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
+    background-color: #e5e5e5;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -51,6 +52,7 @@ input[type="checkbox"].input-validation-error {
 .navbar {
     background-color: #fff;
     color: #42a8f2;
+    margin-bottom: 37px;
 }
 
     .navbar .logo {
@@ -87,7 +89,14 @@ input[type="checkbox"].input-validation-error {
     margin: 0px auto;
     clear: both;
     border-bottom: 1px solid #ccc;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
 }
+
+    .questionCard:hover {
+        background-color: white;
+    }
 
     .questionCard .questionImagePanel {
         float: left;
@@ -110,8 +119,8 @@ input[type="checkbox"].input-validation-error {
         .questionCard .questionScorePanel span {
             width: 84px;
             height: 24px;
-            padding: 15px 25px;
-            margin-left: 70px;
+            padding: 15px 30px;
+            margin-left: 50px;
             display: block;
             text-align: left;
             font-size: 30px;
@@ -119,14 +128,28 @@ input[type="checkbox"].input-validation-error {
         }
 
 .questionInfoPanel {
-    width: 95%;
-    margin-left: 70px;
-}
-.questionInfoPanel h5{
-    font-weight: bold;
-    margin-top: 10px;
+    width: 90%;
+    margin-left: 65px;
 }
 
-.hubPanel .hubCol h2{
+    .questionInfoPanel h5 {
+        font-weight: bold;
+        margin-top: 10px;
+    }
+
+
+
+.hubPanel .hubCol h2 {
     text-align: center;
+    color: #42a8f2;
+}
+
+.questionHeader {
+    text-align: center;
+    background-color: #42a8f2;
+    color: white;
+    padding: 10px 30px 20px;
+    -webkit-border-radius: 30px;
+            -moz-border-radius: 30px;
+            border-radius: 30px;
 }

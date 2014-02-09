@@ -52,7 +52,7 @@ namespace HashGag.Controllers
             //questionList.Add(sfdf);
 
             //CompetitionViewModel model = new CompetitionViewModel(questionList, questionList, questionList);
-            CompetitionViewModel model = new CompetitionViewModel(null, null, null);
+            CompetitionViewModel model = new CompetitionViewModel(null, null, null, null);
             return View(model);
         }
 
@@ -70,10 +70,12 @@ namespace HashGag.Controllers
                         select new { q, t, tu, cpt };
 
             List<CompTweetModel> list = new List<CompTweetModel>();
-
+            Question question = null;
             foreach (var item in query)
             {
+                if(question == null)question = item.q;
                 Tweet tweet = item.t;
+                tweet.RetweetCount++;
                 TwitterUser tUser = item.tu;
                 
                 CompTweetModel cTUser = new CompTweetModel(tweet, tUser);
@@ -82,10 +84,9 @@ namespace HashGag.Controllers
             }
 
             List<CompTweetModel> tempOrderedTweets = new List<CompTweetModel>();
-
             tempOrderedTweets.AddRange(from atweet in list orderby atweet.tweet.RetweetCount descending select atweet);
            
-            CompetitionViewModel cmodel = new CompetitionViewModel(tempOrderedTweets, list, list);
+            CompetitionViewModel cmodel = new CompetitionViewModel(question, tempOrderedTweets, list, list);
             return View("Index", cmodel);
         }
 	}
