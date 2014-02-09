@@ -1,18 +1,19 @@
 ﻿@model HashGag.Models.ViewModels.CompTweetModel
 
 <div class="questionCard">
-
-    <div class="questionScorePanel">
-        <span>@Model.tweet.RetweetCount</span>
+    <div class="questionCardWrapper">
+        <div class="questionScorePanel">
+            <span>@Model.tweet.RetweetCount</span>
+        </div>
+        <div class="questionImagePanel">
+            <img src="@Url.Content(Model.user.ProfileImageURL)" alt="Question Image" />
+        </div>
+        <div class="questionInfoPanel">
+            <h5>@Html.DisplayFor(model => model.user.ScreenName)</h5>
+            <div>@Html.DisplayFor(model => model.tweet.Text)</div>
+        </div>
+        <div style="clear: both; height: 1px;"></div>
     </div>
-    <div class="questionImagePanel">
-        <img src="@Url.Content(Model.user.ProfileImageURL)" alt="Question Image" />
-    </div>
-    <div class="questionInfoPanel">
-        <h5>@Html.DisplayFor(model => model.user.ScreenName)</h5>
-        <div>@Html.DisplayFor(model => model.tweet.Text)</div>
-    </div>
-    <div style="clear: both; height: 1px;"></div>
 </div>
 
 

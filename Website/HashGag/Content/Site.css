@@ -2,6 +2,7 @@
     padding-top: 50px;
     padding-bottom: 20px;
     background-color: #e5e5e5;
+    font-family: "letter-gothic-std",sans-serif;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -85,15 +86,18 @@ input[type="checkbox"].input-validation-error {
 .questionCard {
     width: 100%;
     min-height: 100px;
-    padding: 10px;
+    padding: 0 10px;
     margin: 0px auto;
     clear: both;
-    border-bottom: 1px solid #ccc;
+    
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     border-radius: 10px;
 }
-
+.questionCardWrapper {
+    border-bottom: 1px solid #ccc;
+    padding: 10px 0;
+}
     .questionCard:hover {
         background-color: white;
     }
@@ -137,9 +141,11 @@ input[type="checkbox"].input-validation-error {
         margin-top: 10px;
     }
 
-
-
+.hubPanel .hubCol {
+    margin-top: 30px;
+}
 .hubPanel .hubCol h2 {
+
     text-align: center;
     color: #42a8f2;
 }

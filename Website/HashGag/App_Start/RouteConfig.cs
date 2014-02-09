@@ -15,8 +15,8 @@ namespace HashGag
 
             routes.MapRoute(
                 name: "Default",
-                url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Hub", action = "Index", id = UrlParameter.Optional }
+                url: "{controller}/{action}/{id}/{status}",
+                defaults: new { controller = "Hub", action = "Index", id = UrlParameter.Optional, status = UrlParameter.Optional }
             );
         }
     }

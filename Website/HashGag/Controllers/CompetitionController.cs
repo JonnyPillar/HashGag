@@ -71,6 +71,7 @@ namespace HashGag.Controllers
 
             List<CompTweetModel> list = new List<CompTweetModel>();
             Question question = null;
+            if(query.Count() == 0) question = new Question();
             foreach (var item in query)
             {
                 if(question == null)question = item.q;

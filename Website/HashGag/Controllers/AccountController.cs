@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using System.Web;
@@ -204,7 +205,13 @@ namespace HashGag.Controllers
             }
             string twitterUsername = loginInfo.DefaultUserName;
             FormsAuthentication.SetAuthCookie(twitterUsername, true);
-            return RedirectToAction("Index", "Hub", new { id = twitterUsername});
+
+            HttpCookie newCookie = new HttpCookie("HashGaga");
+            newCookie.Value = twitterUsername;
+            newCookie.Expires = DateTime.Now.AddDays(30);
+            
+            Response.Cookies.Add(newCookie);
+            return RedirectToAction("Index", "Hub", new { id = twitterUsername, status = "true"});
         }
 
         //
