@@ -11,8 +11,9 @@
             <img src="https://pbs.twimg.com/profile_images/3685227674/67c501ba4eb74c8b7426f1109b38e70a_bigger.jpeg" alt="Question Image" />
         </div>
         <div class="questionInfoPanel">
+            
             <h5>@Html.DisplayFor(model => model.Text)</h5>
-            <div>@Html.DisplayNameFor(model => model.EndDate)</div>
+            <div>@Html.DisplayText(model => model.EndDate.Value.ToString())</div>
         </div>
     </div>
 </a>

@@ -82,9 +82,9 @@ input[type="checkbox"].input-validation-error {
 */
 .questionCard {
     width: 100%;
-    height: 95px;
+    min-height: 100px;
     padding: 10px;
-    margin: 20px auto;
+    margin: 0px auto;
     clear: both;
     border-bottom: 1px solid #ccc;
 }
@@ -119,11 +119,12 @@ input[type="checkbox"].input-validation-error {
         }
 
 .questionInfoPanel {
-    width: 75%;
+    width: 95%;
+    margin-left: 70px;
 }
 .questionInfoPanel h5{
     font-weight: bold;
-    margin-top: 13px;
+    margin-top: 10px;
 }
 
 .hubPanel .hubCol h2{
