@@ -211,6 +211,15 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\gary.css" />
+    <Content Include="Content\Images\Invite_button.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Images\invite_line.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Images\Invite_text.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Content\Images\Login_button.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -291,6 +300,7 @@
     <Content Include="Views\Shared\Cards\TweetCard.cshtml" />
     <Content Include="Views\Shared\Cards\QuestionCard.cshtml" />
     <Content Include="Views\Account\_Login.cshtml" />
+    <Content Include="Views\Shared\_Invite.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
