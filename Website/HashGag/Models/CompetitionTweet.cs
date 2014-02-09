@@ -16,9 +16,8 @@ namespace HashGag.Models
     {
         public int CompetitionTweetID { get; set; }
         public Nullable<int> QuestionID { get; set; }
-        public Nullable<int> TweetID { get; set; }
+        public Nullable<long> TweetID { get; set; }
     
         public virtual Question Question { get; set; }
-        public virtual TwitterUser TwitterUser { get; set; }
     }
 }

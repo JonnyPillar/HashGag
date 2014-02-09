@@ -11,7 +11,7 @@
           </Key>
           <Property Name="CompetitionTweetID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="QuestionID" Type="int" />
-          <Property Name="TweetID" Type="int" />
+          <Property Name="TweetID" Type="bigint" />
         </EntityType>
         <EntityType Name="IdentityUserLogin">
           <Key>
@@ -86,18 +86,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Competiti__Tweet__35BCFE0A">
-          <End Role="TwitterUser" Type="Self.TwitterUser" Multiplicity="0..1" />
-          <End Role="CompetitionTweet" Type="Self.CompetitionTweet" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="TwitterUser">
-              <PropertyRef Name="HashgagUserID" />
-            </Principal>
-            <Dependent Role="CompetitionTweet">
-              <PropertyRef Name="TweetID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK__Question__AskedB__2A4B4B5E">
           <End Role="TwitterUser" Type="Self.TwitterUser" Multiplicity="0..1" />
           <End Role="Question" Type="Self.Question" Multiplicity="*" />
@@ -120,10 +108,6 @@
             <End Role="Question" EntitySet="Question" />
             <End Role="CompetitionTweet" EntitySet="CompetitionTweet" />
           </AssociationSet>
-          <AssociationSet Name="FK__Competiti__Tweet__35BCFE0A" Association="Self.FK__Competiti__Tweet__35BCFE0A">
-            <End Role="TwitterUser" EntitySet="TwitterUser" />
-            <End Role="CompetitionTweet" EntitySet="CompetitionTweet" />
-          </AssociationSet>
           <AssociationSet Name="FK__Question__AskedB__2A4B4B5E" Association="Self.FK__Question__AskedB__2A4B4B5E">
             <End Role="TwitterUser" EntitySet="TwitterUser" />
             <End Role="Question" EntitySet="Question" />
@@ -143,10 +127,6 @@
             <End Role="Question" EntitySet="Questions" />
             <End Role="CompetitionTweet" EntitySet="CompetitionTweets" />
           </AssociationSet>
-          <AssociationSet Name="FK__Competiti__Tweet__35BCFE0A" Association="hashgagModel.FK__Competiti__Tweet__35BCFE0A">
-            <End Role="TwitterUser" EntitySet="TwitterUsers" />
-            <End Role="CompetitionTweet" EntitySet="CompetitionTweets" />
-          </AssociationSet>
           <AssociationSet Name="FK__Question__AskedB__2A4B4B5E" Association="hashgagModel.FK__Question__AskedB__2A4B4B5E">
             <End Role="TwitterUser" EntitySet="TwitterUsers" />
             <End Role="Question" EntitySet="Questions" />
@@ -158,9 +138,8 @@
           </Key>
           <Property Name="CompetitionTweetID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="QuestionID" Type="Int32" />
-          <Property Name="TweetID" Type="Int32" />
+          <Property Name="TweetID" Type="Int64" />
           <NavigationProperty Name="Question" Relationship="hashgagModel.FK__Competiti__Quest__34C8D9D1" FromRole="CompetitionTweet" ToRole="Question" />
-          <NavigationProperty Name="TwitterUser" Relationship="hashgagModel.FK__Competiti__Tweet__35BCFE0A" FromRole="CompetitionTweet" ToRole="TwitterUser" />
         </EntityType>
         <EntityType Name="IdentityUserLogin">
           <Key>
@@ -224,7 +203,6 @@
           <Property Name="ProfileImageURLHttps" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="ScreenName" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
           <Property Name="StatusesCount" Type="Int32" />
-          <NavigationProperty Name="CompetitionTweets" Relationship="hashgagModel.FK__Competiti__Tweet__35BCFE0A" FromRole="TwitterUser" ToRole="CompetitionTweet" />
           <NavigationProperty Name="Questions" Relationship="hashgagModel.FK__Question__AskedB__2A4B4B5E" FromRole="TwitterUser" ToRole="Question" />
         </EntityType>
         <Association Name="FK__Competiti__Quest__34C8D9D1">
@@ -236,18 +214,6 @@
             </Principal>
             <Dependent Role="CompetitionTweet">
               <PropertyRef Name="QuestionID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__Competiti__Tweet__35BCFE0A">
-          <End Type="hashgagModel.TwitterUser" Role="TwitterUser" Multiplicity="0..1" />
-          <End Type="hashgagModel.CompetitionTweet" Role="CompetitionTweet" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="TwitterUser">
-              <PropertyRef Name="HashgagUserID" />
-            </Principal>
-            <Dependent Role="CompetitionTweet">
-              <PropertyRef Name="TweetID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>

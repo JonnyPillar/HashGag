@@ -16,7 +16,6 @@ namespace HashGag.Models
     {
         public TwitterUser()
         {
-            this.CompetitionTweets = new HashSet<CompetitionTweet>();
             this.Questions = new HashSet<Question>();
         }
     
@@ -36,7 +35,6 @@ namespace HashGag.Models
         public string ScreenName { get; set; }
         public Nullable<int> StatusesCount { get; set; }
     
-        public virtual ICollection<CompetitionTweet> CompetitionTweets { get; set; }
         public virtual ICollection<Question> Questions { get; set; }
     }
 }

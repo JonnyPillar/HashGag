@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Policy;
 using System.Web;
 using System.Web.Mvc;
 using HashGag.Models;
@@ -52,6 +53,17 @@ namespace HashGag.Controllers
             CompetitionViewModel model = new CompetitionViewModel(questionList, questionList, questionList);
 
             return View(model);
+        }
+
+        public ActionResult Details(int questionID)
+        {
+            hashgagEntities db = new hashgagEntities();
+            Question question = db.Questions.FirstOrDefault(model => model.QuestionID == questionID);
+
+            List<CompetitionTweet> tweetList = question.CompetitionTweets.ToList();
+
+            
+
         }
 	}
 }
