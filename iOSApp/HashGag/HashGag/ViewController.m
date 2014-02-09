@@ -26,4 +26,10 @@
     // Dispose of any resources that can be recreated.
 }
 
+//Light Status Bar
+-(UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleLightContent;
+}
+
 @end

@@ -21,6 +21,24 @@
 		472A64C718A695C900661CF4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 472A64A918A695C900661CF4 /* UIKit.framework */; };
 		472A64CF18A695C900661CF4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 472A64CD18A695C900661CF4 /* InfoPlist.strings */; };
 		472A64D118A695C900661CF4 /* HashGagTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 472A64D018A695C900661CF4 /* HashGagTests.m */; };
+		472A64DF18A6FBD800661CF4 /* Login_Screen_Button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 472A64DE18A6FBD800661CF4 /* Login_Screen_Button@2x.png */; };
+		472A64E218A6FC9400661CF4 /* Login_Screen_Logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 472A64E118A6FC9400661CF4 /* Login_Screen_Logo@2x.png */; };
+		472A64E818A7021600661CF4 /* LoginPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 472A64E718A7021600661CF4 /* LoginPageViewController.m */; };
+		472A64EE18A703E000661CF4 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 472A64ED18A703E000661CF4 /* LoginViewController.m */; };
+		472A64F118A710DE00661CF4 /* MainPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 472A64F018A710DE00661CF4 /* MainPageViewController.m */; };
+		472A64F318A7114600661CF4 /* Nav_Bar_Logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 472A64F218A7114600661CF4 /* Nav_Bar_Logo@2x.png */; };
+		472A64F518A714A900661CF4 /* Settings@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 472A64F418A714A900661CF4 /* Settings@2x.png */; };
+		472A64F718A714BE00661CF4 /* Invite_Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 472A64F618A714BE00661CF4 /* Invite_Icon@2x.png */; };
+		472A64FA18A718F600661CF4 /* WinningViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 472A64F918A718F600661CF4 /* WinningViewController.m */; };
+		472A64FC18A71EA300661CF4 /* 58x58.png in Resources */ = {isa = PBXBuildFile; fileRef = 472A64FB18A71EA300661CF4 /* 58x58.png */; };
+		472A64FE18A71EB100661CF4 /* 80x80.png in Resources */ = {isa = PBXBuildFile; fileRef = 472A64FD18A71EB100661CF4 /* 80x80.png */; };
+		472A650018A71EBD00661CF4 /* 120x120.png in Resources */ = {isa = PBXBuildFile; fileRef = 472A64FF18A71EBD00661CF4 /* 120x120.png */; };
+		472A650218A71ED400661CF4 /* 152x152.ai in Resources */ = {isa = PBXBuildFile; fileRef = 472A650118A71ED400661CF4 /* 152x152.ai */; };
+		472A650418A71EDA00661CF4 /* 1024x1024.png in Resources */ = {isa = PBXBuildFile; fileRef = 472A650318A71EDA00661CF4 /* 1024x1024.png */; };
+		472A650718A71F4500661CF4 /* ContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 472A650618A71F4500661CF4 /* ContainerViewController.m */; };
+		472A650A18A7202500661CF4 /* LosingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 472A650918A7202500661CF4 /* LosingViewController.m */; };
+		472A650D18A72BEC00661CF4 /* UserScoreTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 472A650C18A72BEC00661CF4 /* UserScoreTableCell.m */; };
+		472A651018A730E200661CF4 /* WinningTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 472A650F18A730E200661CF4 /* WinningTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +71,32 @@
 		472A64CC18A695C900661CF4 /* HashGagTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HashGagTests-Info.plist"; sourceTree = "<group>"; };
 		472A64CE18A695C900661CF4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		472A64D018A695C900661CF4 /* HashGagTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HashGagTests.m; sourceTree = "<group>"; };
+		472A64DE18A6FBD800661CF4 /* Login_Screen_Button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Login_Screen_Button@2x.png"; sourceTree = "<group>"; };
+		472A64E118A6FC9400661CF4 /* Login_Screen_Logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Login_Screen_Logo@2x.png"; sourceTree = "<group>"; };
+		472A64E618A7021600661CF4 /* LoginPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginPageViewController.h; sourceTree = "<group>"; };
+		472A64E718A7021600661CF4 /* LoginPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginPageViewController.m; sourceTree = "<group>"; };
+		472A64EC18A703E000661CF4 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = ../LoginViewController.h; sourceTree = "<group>"; };
+		472A64ED18A703E000661CF4 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = ../LoginViewController.m; sourceTree = "<group>"; };
+		472A64EF18A710DE00661CF4 /* MainPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainPageViewController.h; sourceTree = "<group>"; };
+		472A64F018A710DE00661CF4 /* MainPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainPageViewController.m; sourceTree = "<group>"; };
+		472A64F218A7114600661CF4 /* Nav_Bar_Logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Nav_Bar_Logo@2x.png"; sourceTree = "<group>"; };
+		472A64F418A714A900661CF4 /* Settings@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Settings@2x.png"; sourceTree = "<group>"; };
+		472A64F618A714BE00661CF4 /* Invite_Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Invite_Icon@2x.png"; sourceTree = "<group>"; };
+		472A64F818A718F600661CF4 /* WinningViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WinningViewController.h; sourceTree = "<group>"; };
+		472A64F918A718F600661CF4 /* WinningViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WinningViewController.m; sourceTree = "<group>"; };
+		472A64FB18A71EA300661CF4 /* 58x58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 58x58.png; sourceTree = "<group>"; };
+		472A64FD18A71EB100661CF4 /* 80x80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 80x80.png; sourceTree = "<group>"; };
+		472A64FF18A71EBD00661CF4 /* 120x120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 120x120.png; sourceTree = "<group>"; };
+		472A650118A71ED400661CF4 /* 152x152.ai */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 152x152.ai; sourceTree = "<group>"; };
+		472A650318A71EDA00661CF4 /* 1024x1024.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1024x1024.png; sourceTree = "<group>"; };
+		472A650518A71F4500661CF4 /* ContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContainerViewController.h; sourceTree = "<group>"; };
+		472A650618A71F4500661CF4 /* ContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContainerViewController.m; sourceTree = "<group>"; };
+		472A650818A7202500661CF4 /* LosingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LosingViewController.h; sourceTree = "<group>"; };
+		472A650918A7202500661CF4 /* LosingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LosingViewController.m; sourceTree = "<group>"; };
+		472A650B18A72BEC00661CF4 /* UserScoreTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserScoreTableCell.h; sourceTree = "<group>"; };
+		472A650C18A72BEC00661CF4 /* UserScoreTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserScoreTableCell.m; sourceTree = "<group>"; };
+		472A650E18A730E200661CF4 /* WinningTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WinningTableViewController.h; sourceTree = "<group>"; };
+		472A650F18A730E200661CF4 /* WinningTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WinningTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				472A64AB18A695C900661CF4 /* HashGag */,
+				472A64E018A6FBE800661CF4 /* Images */,
 				472A64CA18A695C900661CF4 /* HashGagTests */,
 				472A64A418A695C900661CF4 /* Frameworks */,
 				472A64A318A695C900661CF4 /* Products */,
@@ -112,6 +157,7 @@
 		472A64AB18A695C900661CF4 /* HashGag */ = {
 			isa = PBXGroup;
 			children = (
+				472A64DA18A6F5B900661CF4 /* View Controllers */,
 				472A64B418A695C900661CF4 /* AppDelegate.h */,
 				472A64B518A695C900661CF4 /* AppDelegate.m */,
 				472A64B718A695C900661CF4 /* Main.storyboard */,
@@ -150,6 +196,47 @@
 				472A64CD18A695C900661CF4 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		472A64DA18A6F5B900661CF4 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				472A64E618A7021600661CF4 /* LoginPageViewController.h */,
+				472A64E718A7021600661CF4 /* LoginPageViewController.m */,
+				472A64EC18A703E000661CF4 /* LoginViewController.h */,
+				472A64ED18A703E000661CF4 /* LoginViewController.m */,
+				472A64EF18A710DE00661CF4 /* MainPageViewController.h */,
+				472A64F018A710DE00661CF4 /* MainPageViewController.m */,
+				472A64F818A718F600661CF4 /* WinningViewController.h */,
+				472A64F918A718F600661CF4 /* WinningViewController.m */,
+				472A650518A71F4500661CF4 /* ContainerViewController.h */,
+				472A650618A71F4500661CF4 /* ContainerViewController.m */,
+				472A650818A7202500661CF4 /* LosingViewController.h */,
+				472A650918A7202500661CF4 /* LosingViewController.m */,
+				472A650B18A72BEC00661CF4 /* UserScoreTableCell.h */,
+				472A650C18A72BEC00661CF4 /* UserScoreTableCell.m */,
+				472A650E18A730E200661CF4 /* WinningTableViewController.h */,
+				472A650F18A730E200661CF4 /* WinningTableViewController.m */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		472A64E018A6FBE800661CF4 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				472A64FB18A71EA300661CF4 /* 58x58.png */,
+				472A64FD18A71EB100661CF4 /* 80x80.png */,
+				472A64FF18A71EBD00661CF4 /* 120x120.png */,
+				472A650118A71ED400661CF4 /* 152x152.ai */,
+				472A650318A71EDA00661CF4 /* 1024x1024.png */,
+				472A64DE18A6FBD800661CF4 /* Login_Screen_Button@2x.png */,
+				472A64E118A6FC9400661CF4 /* Login_Screen_Logo@2x.png */,
+				472A64F218A7114600661CF4 /* Nav_Bar_Logo@2x.png */,
+				472A64F418A714A900661CF4 /* Settings@2x.png */,
+				472A64F618A714BE00661CF4 /* Invite_Icon@2x.png */,
+			);
+			name = Images;
+			path = HashGag;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -229,7 +316,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				472A64BE18A695C900661CF4 /* Images.xcassets in Resources */,
+				472A64E218A6FC9400661CF4 /* Login_Screen_Logo@2x.png in Resources */,
+				472A650218A71ED400661CF4 /* 152x152.ai in Resources */,
 				472A64B018A695C900661CF4 /* InfoPlist.strings in Resources */,
+				472A64F518A714A900661CF4 /* Settings@2x.png in Resources */,
+				472A650018A71EBD00661CF4 /* 120x120.png in Resources */,
+				472A64F318A7114600661CF4 /* Nav_Bar_Logo@2x.png in Resources */,
+				472A650418A71EDA00661CF4 /* 1024x1024.png in Resources */,
+				472A64DF18A6FBD800661CF4 /* Login_Screen_Button@2x.png in Resources */,
+				472A64F718A714BE00661CF4 /* Invite_Icon@2x.png in Resources */,
+				472A64FC18A71EA300661CF4 /* 58x58.png in Resources */,
+				472A64FE18A71EB100661CF4 /* 80x80.png in Resources */,
 				472A64B918A695C900661CF4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -251,7 +348,15 @@
 			files = (
 				472A64BC18A695C900661CF4 /* ViewController.m in Sources */,
 				472A64B618A695C900661CF4 /* AppDelegate.m in Sources */,
+				472A64F118A710DE00661CF4 /* MainPageViewController.m in Sources */,
+				472A64E818A7021600661CF4 /* LoginPageViewController.m in Sources */,
+				472A650D18A72BEC00661CF4 /* UserScoreTableCell.m in Sources */,
 				472A64B218A695C900661CF4 /* main.m in Sources */,
+				472A651018A730E200661CF4 /* WinningTableViewController.m in Sources */,
+				472A650A18A7202500661CF4 /* LosingViewController.m in Sources */,
+				472A64EE18A703E000661CF4 /* LoginViewController.m in Sources */,
+				472A650718A71F4500661CF4 /* ContainerViewController.m in Sources */,
+				472A64FA18A718F600661CF4 /* WinningViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -376,8 +481,6 @@
 		472A64D518A695C900661CF4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HashGag/HashGag-Prefix.pch";
 				INFOPLIST_FILE = "HashGag/HashGag-Info.plist";
@@ -389,8 +492,6 @@
 		472A64D618A695C900661CF4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HashGag/HashGag-Prefix.pch";
 				INFOPLIST_FILE = "HashGag/HashGag-Info.plist";
@@ -460,6 +561,7 @@
 				472A64D618A695C900661CF4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		472A64D718A695C900661CF4 /* Build configuration list for PBXNativeTarget "HashGagTests" */ = {
 			isa = XCConfigurationList;
@@ -468,6 +570,7 @@
 				472A64D918A695C900661CF4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
