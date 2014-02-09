@@ -7,19 +7,19 @@
 
 <div class="hubPanel container">
     <div class="container">
-        <div class="questionHeader col-xs-1 col-sm-6 col-sm-offset-3">
+        <div class="questionHeader col-xs-12 col-sm-6 col-sm-offset-3">
             <h1>#@Model.Question.Text</h1>
             <h4>@Model.Question.EndDate.Value.ToString("dd/MM/yyyy HH:mm:ss", null as DateTimeFormatInfo)</h4>
         </div>
-    <div class="hubCol temp col-sm-4 col-xs-1">
+    <div class="hubCol temp col-sm-4 col-xs-12">
         <h2>Top Tweets</h2>
         @Html.Partial("CompQuestionListView", Model.ColumnOneQuestions)
     </div>
-    <div class="hubCol col-sm-4 col-xs-1">
+    <div class="hubCol col-sm-4 col-xs-12">
         <h2>My Ranking</h2>
         @Html.Partial("CompQuestionListView", Model.ColumnTwoQuestions)
     </div>
-    <div class="hubCol col-sm-4 col-xs-1">
+    <div class="hubCol col-sm-4 col-xs-12">
         <h2>Most Recent </h2>
         @Html.Partial("CompQuestionListView", Model.ColumnThreeQuestions)
     </div>

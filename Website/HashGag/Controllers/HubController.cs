@@ -36,13 +36,9 @@ namespace HashGag.Controllers
                 FormsAuthentication.SetAuthCookie(id, true);
             }
             
-            if (HttpContext.User.Identity.IsAuthenticated)
-            {
-                        
-            }
             hashgagEntities      db = new hashgagEntities();
             List<Question> temp = db.Questions.ToList();
-            HubViewModel model = new HubViewModel(temp, temp, temp);
+            HubViewModel model = new HubViewModel(id, temp, temp, temp);
 
             return View(model);
         }

@@ -2,16 +2,20 @@
 
 @{
     ViewBag.Title = "Hub";
-
 }
 
 <div class="hubPanel container" >
+    
     <div class="container">
-        <div class="questionHeader col-xs-1 col-sm-4 col-sm-offset-4">
+        <div style="text-align: center;" class="col-xs-12">
+            @Model.WelcomeMessage
+        </div>
+        <div style="clear: both; height: 1px;"></div>
+        <div class="questionHeader col-xs-12 col-sm-4 col-sm-offset-4">
             <h1>Active Questions</h1>
         </div>
     </div>
-    <div class="hubCol col-sm-6 col-sm-offset-3 col-xs-1">
+    <div class="hubCol col-sm-6 col-sm-offset-3 col-xs-12">
         @Html.Partial("_QuestionListView", Model.ColumnOneQuestions)
     </div>
 </div>
