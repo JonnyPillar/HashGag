@@ -26,9 +26,9 @@ namespace HashGag.Models
         }
     
         public virtual DbSet<CompetitionTweet> CompetitionTweets { get; set; }
+        public virtual DbSet<IdentityUserLogin> IdentityUserLogins { get; set; }
         public virtual DbSet<Question> Questions { get; set; }
         public virtual DbSet<Tweet> Tweets { get; set; }
         public virtual DbSet<TwitterUser> TwitterUsers { get; set; }
-        public virtual DbSet<IdentityUserLogin> IdentityUserLogins { get; set; }
     }
 }

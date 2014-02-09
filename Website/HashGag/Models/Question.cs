@@ -21,10 +21,10 @@ namespace HashGag.Models
     
         public int QuestionID { get; set; }
         public string Text { get; set; }
-        public Nullable<long> Duration { get; set; }
         public Nullable<System.DateTimeOffset> CreationDate { get; set; }
         public Nullable<System.DateTimeOffset> StartDate { get; set; }
-        public Nullable<int> AskedByTwitterUser { get; set; }
+        public Nullable<int> AskedByHashGagUser { get; set; }
+        public Nullable<System.DateTimeOffset> EndDate { get; set; }
     
         public virtual ICollection<CompetitionTweet> CompetitionTweets { get; set; }
         public virtual TwitterUser TwitterUser { get; set; }

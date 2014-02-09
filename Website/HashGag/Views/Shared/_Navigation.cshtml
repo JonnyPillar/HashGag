@@ -3,37 +3,17 @@
 <div class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
         <div>
-            <div class="nav navbar-nav navbar-left">
-                <ul class="nav navbar-nav navbar-left">
-                    @if (Request.IsAuthenticated)
-                    {
-                        <li>@Html.Label("Hello " + User.Identity.GetUserName())</li>
-                    }
+            <div class="col-sm-4 col-xs-1">
+                <ul class="welcomePanel nav navbar-nav" >
+                    <li>@Html.Label("Hello " + User.Identity.GetUserName())</li>
                 </ul>
-                
             </div>
-            <div class="nav navbar-nav navbar-default">
-                <img src=""/>
+            <div class="logoPanel col-sm-4 col-xs-1">
+                <img class="logo" src="/Content/Images/Nav_Bar_Logo.png" />
             </div>
-            <div class="nav navbar-nav navbar-right">
+            <div class="loginPanel col-sm-4 col-xs-1">
                 @Html.Partial("_LoginPartial")
             </div>
         </div>
-        @*<div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            @Html.ActionLink("HashGag", "Index", "Home", null, new { @class = "navbar-brand" })
-        </div>
-        <div class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-                <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                <li>@Html.ActionLink("Category Hub", "Index", "Hub")</li>
-                <li>@Html.ActionLink("My Profile", "Index", "User")</li>
-            </ul>
-            
-        </div>*@
     </div>
 </div>

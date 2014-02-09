@@ -16,7 +16,7 @@ namespace HashGag.Models
     {
         public int HashgagTweetID { get; set; }
         public Nullable<long> TweetID { get; set; }
-        public Nullable<int> TwitterUserID { get; set; }
+        public Nullable<long> TwitterUserID { get; set; }
         public Nullable<System.DateTimeOffset> CreatedAt { get; set; }
         public Nullable<int> FavouriteCount { get; set; }
         public Nullable<bool> Favourited { get; set; }
@@ -31,7 +31,5 @@ namespace HashGag.Models
         public Nullable<int> RetweetCount { get; set; }
         public Nullable<bool> Retweeted { get; set; }
         public string Text { get; set; }
-    
-        public virtual TwitterUser TwitterUser { get; set; }
     }
 }

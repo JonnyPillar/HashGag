@@ -18,9 +18,9 @@ namespace HashGag.Controllers
 
             Question question = new Question();
             question.Text = "The current Hashgag is: #SadToys";
-            question.AskedByTwitterUser = 3;
+ 
             question.CreationDate = new DateTimeOffset(new DateTime(2014,02,08));
-            question.Duration = 23;
+    
             question.QuestionID = 1;
             question.StartDate = new DateTimeOffset(new DateTime(2014,02,08));
             question.TwitterUser = tu;

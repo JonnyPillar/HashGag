@@ -18,7 +18,6 @@ namespace HashGag.Models
         {
             this.CompetitionTweets = new HashSet<CompetitionTweet>();
             this.Questions = new HashSet<Question>();
-            this.Tweets = new HashSet<Tweet>();
         }
     
         public int HashgagUserID { get; set; }
@@ -39,6 +38,5 @@ namespace HashGag.Models
     
         public virtual ICollection<CompetitionTweet> CompetitionTweets { get; set; }
         public virtual ICollection<Question> Questions { get; set; }
-        public virtual ICollection<Tweet> Tweets { get; set; }
     }
 }

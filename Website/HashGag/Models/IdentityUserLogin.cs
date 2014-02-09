@@ -16,6 +16,6 @@ namespace HashGag.Models
     {
         public int HashgagUserID { get; set; }
         public long TwitterID { get; set; }
-        public string Username { get; set; }
+        public string Name { get; set; }
     }
 }
