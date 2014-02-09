@@ -7,11 +7,11 @@ namespace HashGag.Models.ViewModels
 {
     public class CompetitionViewModel
     {
-        public List<Question> ColumnOneQuestions;
-        public List<Question> ColumnTwoQuestions;
-        public List<Question> ColumnThreeQuestions;
+        public List<Tweet> ColumnOneQuestions;
+        public List<Tweet> ColumnTwoQuestions;
+        public List<Tweet> ColumnThreeQuestions;
 
-        public CompetitionViewModel(List<Question> columnOneQuestions, List<Question> columnTwoQuestions, List<Question> columnThreeQuestions)
+        public CompetitionViewModel(List<Tweet> columnOneQuestions, List<Tweet> columnTwoQuestions, List<Tweet> columnThreeQuestions)
         {
             ColumnOneQuestions = columnOneQuestions;
             ColumnTwoQuestions = columnTwoQuestions;

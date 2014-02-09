@@ -1,4 +1,4 @@
-﻿@model HashGag.Models.CompetitionTweet
+﻿@model HashGag.Models.Tweet
 
 <div class="questionCard">
 
@@ -9,7 +9,7 @@
         <img src="@Url.Content(Model.TwitterUser.ProfileImageURL)" alt="Question Image" />
     </div>
     <div class="questionInfoPanel">
-        <h5>@Html.DisplayFor(model => model.Text)</h5>
+        <h5>@Html.DisplayFor(model => model.TwitterUser)</h5>
         <div>@Html.DisplayNameFor(model => model.EndDate)</div>
     </div>
 

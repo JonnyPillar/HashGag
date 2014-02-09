@@ -6,6 +6,7 @@ using System.Web;
 using System.Web.Mvc;
 using HashGag.Models;
 using HashGag.Models.ViewModels;
+using Microsoft.Ajax.Utilities;
 
 namespace HashGag.Controllers
 {
@@ -15,43 +16,43 @@ namespace HashGag.Controllers
         // GET: /Competition/
         public ActionResult Index()
         {
-            List<Question> questionList = new List<Question>();
+            //List<Question> questionList = new List<Question>();
 
-            Question sdf = new Question();
+            //Question sdf = new Question();
 
-            sdf.Text = "New Question";
-            sdf.TwitterUser = new TwitterUser();
-            sdf.TwitterUser.ProfileImageURL = "https://pbs.twimg.com/profile_images/3685227674/67c501ba4eb74c8b7426f1109b38e70a_bigger.jpeg";
-            sdf.EndDate = new DateTimeOffset(DateTime.Now);
+            //sdf.Text = "New Question";
+            //sdf.TwitterUser = new TwitterUser();
+            //sdf.TwitterUser.ProfileImageURL = "https://pbs.twimg.com/profile_images/3685227674/67c501ba4eb74c8b7426f1109b38e70a_bigger.jpeg";
+            //sdf.EndDate = new DateTimeOffset(DateTime.Now);
 
-            questionList.Add(sdf);
-            Question sdfa = new Question();
-            sdfa.Text = "New Question Two";
-            sdfa.TwitterUser = new TwitterUser();
-            sdfa.TwitterUser.ProfileImageURL = "https://pbs.twimg.com/profile_images/3685227674/67c501ba4eb74c8b7426f1109b38e70a_bigger.jpeg";
-            sdfa.EndDate = new DateTimeOffset(DateTime.Now);
-            questionList.Add(sdfa);
-            Question sdsf = new Question();
-            sdsf.Text = "New Question Three";
-            sdsf.TwitterUser = new TwitterUser();
-            sdsf.TwitterUser.ProfileImageURL = "https://pbs.twimg.com/profile_images/3685227674/67c501ba4eb74c8b7426f1109b38e70a_bigger.jpeg";
-            sdsf.EndDate = new DateTimeOffset(DateTime.Now);
-            questionList.Add(sdsf);
-            Question sddf = new Question();
-            sddf.Text = "New Question Four";
-            sddf.TwitterUser = new TwitterUser();
-            sddf.TwitterUser.ProfileImageURL = "https://pbs.twimg.com/profile_images/3685227674/67c501ba4eb74c8b7426f1109b38e70a_bigger.jpeg";
-            sddf.EndDate = new DateTimeOffset(DateTime.Now);
-            questionList.Add(sddf);
-            Question sfdf = new Question();
-            sfdf.Text = "New Question Five";
-            sfdf.TwitterUser = new TwitterUser();
-            sfdf.TwitterUser.ProfileImageURL = "https://pbs.twimg.com/profile_images/3685227674/67c501ba4eb74c8b7426f1109b38e70a_bigger.jpeg";
-            sfdf.EndDate = new DateTimeOffset(DateTime.Now);
-            questionList.Add(sfdf);
+            //questionList.Add(sdf);
+            //Question sdfa = new Question();
+            //sdfa.Text = "New Question Two";
+            //sdfa.TwitterUser = new TwitterUser();
+            //sdfa.TwitterUser.ProfileImageURL = "https://pbs.twimg.com/profile_images/3685227674/67c501ba4eb74c8b7426f1109b38e70a_bigger.jpeg";
+            //sdfa.EndDate = new DateTimeOffset(DateTime.Now);
+            //questionList.Add(sdfa);
+            //Question sdsf = new Question();
+            //sdsf.Text = "New Question Three";
+            //sdsf.TwitterUser = new TwitterUser();
+            //sdsf.TwitterUser.ProfileImageURL = "https://pbs.twimg.com/profile_images/3685227674/67c501ba4eb74c8b7426f1109b38e70a_bigger.jpeg";
+            //sdsf.EndDate = new DateTimeOffset(DateTime.Now);
+            //questionList.Add(sdsf);
+            //Question sddf = new Question();
+            //sddf.Text = "New Question Four";
+            //sddf.TwitterUser = new TwitterUser();
+            //sddf.TwitterUser.ProfileImageURL = "https://pbs.twimg.com/profile_images/3685227674/67c501ba4eb74c8b7426f1109b38e70a_bigger.jpeg";
+            //sddf.EndDate = new DateTimeOffset(DateTime.Now);
+            //questionList.Add(sddf);
+            //Question sfdf = new Question();
+            //sfdf.Text = "New Question Five";
+            //sfdf.TwitterUser = new TwitterUser();
+            //sfdf.TwitterUser.ProfileImageURL = "https://pbs.twimg.com/profile_images/3685227674/67c501ba4eb74c8b7426f1109b38e70a_bigger.jpeg";
+            //sfdf.EndDate = new DateTimeOffset(DateTime.Now);
+            //questionList.Add(sfdf);
 
-            CompetitionViewModel model = new CompetitionViewModel(questionList, questionList, questionList);
-
+            //CompetitionViewModel model = new CompetitionViewModel(questionList, questionList, questionList);
+            CompetitionViewModel model = new CompetitionViewModel(null, null, null);
             return View(model);
         }
 
@@ -62,8 +63,15 @@ namespace HashGag.Controllers
 
             List<CompetitionTweet> tweetList = question.CompetitionTweets.ToList();
 
-            
+            List<Tweet> list = new List<Tweet>();
 
+            foreach (var item in tweetList)
+            {
+                Tweet tweet = db.Tweets.FirstOrDefault(mode => mode.TweetID == item.TweetID);
+                list.Add(tweet);
+            }
+            CompetitionViewModel cmodel = new CompetitionViewModel(list, list, list);
+            return View("Index", cmodel);
         }
 	}
 }

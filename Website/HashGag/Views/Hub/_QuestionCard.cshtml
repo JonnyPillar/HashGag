@@ -1,7 +1,8 @@
 ﻿@model HashGag.Models.Question
 
-<div class="questionCard">
-    
+
+<a href="/Controllers/CompetitionController/@Model.QuestionID">
+    <div class="questionCard">
         <div class="questionScorePanel">
             <span>42</span>
         </div>
@@ -12,6 +13,5 @@
             <h5>@Html.DisplayFor(model => model.Text)</h5>
             <div>@Html.DisplayNameFor(model => model.EndDate)</div>
         </div>
-    
-</div>
-
+    </div>
+</a>
