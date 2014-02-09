@@ -52,11 +52,12 @@ namespace Twitter_Engine
                 }
                 else
                 {
+
                     lookupTweet.RetweetCount = tweet.RetweetCount;
-                    db.Tweets.Add(lookupTweet);
                 }
             }
             db.SaveChanges();
+            Console.WriteLine("Committed Changes");
         }
     }
 }

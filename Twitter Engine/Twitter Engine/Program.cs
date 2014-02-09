@@ -13,7 +13,15 @@ namespace Twitter_Engine
     {
         static void Main(string[] args)
         {
-            FetchTweets();
+            try
+            {
+                FetchTweets();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                Console.ReadKey();
+            }
         }
 
         public static void FetchTweets()
