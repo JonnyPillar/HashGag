@@ -61,21 +61,21 @@
 
 #login-container {
     margin: 0 auto;
-    width: 14%;
+    width: 33%;
 }
 
 #login-button {
-    padding-top: 37px;
+    padding-top: 49px;
     padding-bottom: 25px;
 }
 
 #login-line {
-    padding-left: 10px;
+    padding-left: 18px;
 }
 
 #login-logo {
-    padding-left: 20px;
-    padding-bottom: 24px;
+    padding-left: 45px;
+    padding-bottom: 27px;
     padding-top: 19px;
 }
 
