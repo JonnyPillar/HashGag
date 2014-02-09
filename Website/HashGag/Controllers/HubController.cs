@@ -13,6 +13,11 @@ namespace HashGag.Controllers
         // GET: /Hub/
         public ActionResult Index()
         {
+            hashgagEntities db = new hashgagEntities();
+            List<Question> questionList = db.Questions.ToList();
+
+
+
             Question q1 = new Question();
 
             q1.Text = "#SadToys";

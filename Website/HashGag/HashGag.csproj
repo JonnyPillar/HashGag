@@ -201,8 +201,11 @@
     <Compile Include="Models\TwitterUser.cs">
       <DependentUpon>HashGagDatabase.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\ViewModels\NavigationBar.cs" />
+    <Compile Include="Models\ViewModels\NavigationUserInfoView.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="Utils\CookieUtil.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />

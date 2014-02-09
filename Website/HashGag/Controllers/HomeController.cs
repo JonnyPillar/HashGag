@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using HashGag.Models.ViewModels;
+using HashGag.Utils;
 
 namespace HashGag.Controllers
 {
@@ -10,6 +12,9 @@ namespace HashGag.Controllers
     {
         public ActionResult Index()
         {
+            //string twitterName = CookieUtil.GetUserFromAuthCookie(User);
+            //NavigationBar navigationBar = new NavigationBar(twitterName);
+            //return this.View(navigationBar);
             return View();
         }
 
