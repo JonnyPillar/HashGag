@@ -75,6 +75,9 @@ input[type="checkbox"].input-validation-error {
         padding-top: 10px;
         padding-bottom: 10px;
     }
+    .navbar-inverse .navbar-nav > li > a:hover {
+        background-color: #42a8f2;
+    }
 
 .welcomePanel label {
     padding: 8px 0 0;
@@ -86,7 +89,7 @@ input[type="checkbox"].input-validation-error {
 .questionCard {
     width: 100%;
     min-height: 100px;
-    padding: 0 10px;
+    padding: 12px 10px 0;
     margin: 0px auto;
     clear: both;
     
@@ -140,7 +143,13 @@ input[type="checkbox"].input-validation-error {
         font-weight: bold;
         margin-top: 10px;
     }
-
+.hubWelcome {
+    text-align: center;
+    background-color: #42a8f2;
+    color: white;
+    padding: 20px;
+    margin-bottom: 20px;
+}
 .hubPanel .hubCol {
     margin-top: 30px;
 }

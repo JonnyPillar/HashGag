@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Globalization;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Security.Policy;
 using System.Web;
 using System.Web.Mvc;
 using HashGag.Models;
 using HashGag.Models.ViewModels;
-using Microsoft.Ajax.Utilities;
-using WebGrease.Css.Ast.Selectors;
 
 namespace HashGag.Controllers
 {
@@ -18,53 +13,55 @@ namespace HashGag.Controllers
         // GET: /Competition/
         public ActionResult Index()
         {
-            CompetitionViewModel model = new CompetitionViewModel(null, null, null, null);
+            var model = new CompetitionViewModel(null, null, null, null);
             return View(model);
         }
 
         [HttpGet]
         public ActionResult Details(int id)
         {
-            hashgagEntities db = new hashgagEntities();
+            var db = new hashgagEntities();
 
             var query = from q in db.Questions
-                        join cpt in db.CompetitionTweets on q.QuestionID equals cpt.QuestionID
-                        join t in db.Tweets on cpt.TweetID equals t.TweetID
-                        join tu in db.TwitterUsers on t.TwitterUserID equals tu.TwitterID
-                        where q.QuestionID == id
+                join cpt in db.CompetitionTweets on q.QuestionID equals cpt.QuestionID
+                join t in db.Tweets on cpt.TweetID equals t.TweetID
+                join tu in db.TwitterUsers on t.TwitterUserID equals tu.TwitterID
+                where q.QuestionID == id
+                select new {q, t, tu, cpt};
 
-                        select new { q, t, tu, cpt };
-
-            List<CompTweetModel> list = new List<CompTweetModel>();
+            var list = new List<CompTweetModel>();
             Question question = null;
-            if(query.Count() == 0) question = new Question();
+            if (query.Count() == 0) question = new Question();
             foreach (var item in query)
             {
-                if(question == null)question = item.q;
+                if (question == null) question = item.q;
                 Tweet tweet = item.t;
                 tweet.RetweetCount++;
                 TwitterUser tUser = item.tu;
-                
-                CompTweetModel cTUser = new CompTweetModel(tweet, tUser);
+
+                var cTUser = new CompTweetModel(tweet, tUser);
 
                 list.Add(cTUser);
             }
 
-            List<CompTweetModel> highestscoringOrderedTweets = new List<CompTweetModel>();
-            List<CompTweetModel>   mostRecentOrderedTweets = new List<CompTweetModel>();
-            List<CompTweetModel>   myOrdereedTweets = new List<CompTweetModel>();
+            var highestscoringOrderedTweets = new List<CompTweetModel>();
+            var mostRecentOrderedTweets = new List<CompTweetModel>();
+            var myOrdereedTweets = new List<CompTweetModel>();
 
-            highestscoringOrderedTweets.AddRange(from atweet in list orderby atweet.tweet.RetweetCount descending select atweet);
+            highestscoringOrderedTweets.AddRange(from atweet in list
+                orderby atweet.tweet.RetweetCount descending
+                select atweet);
             mostRecentOrderedTweets.AddRange(from atweet in list orderby atweet.tweet.CreatedAt descending select atweet);
 
             HttpCookie requestCookie = Request.Cookies["HashGaga"];
 
             if (requestCookie != null)
             {
-                int FirstInstanceOfUser = highestscoringOrderedTweets.IndexOf((from alltweets in highestscoringOrderedTweets
-                                                                               where alltweets.user.ScreenName == requestCookie.Value
-                                           orderby alltweets.tweet.RetweetCount descending
-                                           select alltweets).FirstOrDefault());
+                int FirstInstanceOfUser =
+                    highestscoringOrderedTweets.IndexOf((from alltweets in highestscoringOrderedTweets
+                        where alltweets.user.ScreenName == requestCookie.Value
+                        orderby alltweets.tweet.RetweetCount descending
+                        select alltweets).FirstOrDefault());
 
                 int totalNeeded = highestscoringOrderedTweets.Count >= 10
                     ? 10
@@ -77,7 +74,8 @@ namespace HashGag.Controllers
                 }
                 if (FirstInstanceOfUser + 5 > highestscoringOrderedTweets.Count)
                 {
-                    FirstInstanceOfUser = FirstInstanceOfUser - ((FirstInstanceOfUser + 5) - highestscoringOrderedTweets.Count);
+                    FirstInstanceOfUser = FirstInstanceOfUser -
+                                          ((FirstInstanceOfUser + 5) - highestscoringOrderedTweets.Count);
                 }
 
                 if (totalNeeded < 10)
@@ -93,14 +91,15 @@ namespace HashGag.Controllers
                         {
                             myOrdereedTweets.Add(atweetmodel);
                         }
-                    } 
+                    }
                 }
             }
             ;
 
-            CompetitionViewModel cmodel = new CompetitionViewModel(question,highestscoringOrderedTweets, myOrdereedTweets, mostRecentOrderedTweets);
+            var cmodel = new CompetitionViewModel(question, highestscoringOrderedTweets, myOrdereedTweets,
+                mostRecentOrderedTweets);
 
             return View("Index", cmodel);
         }
-	}
+    }
 }
