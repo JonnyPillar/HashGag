@@ -1,5 +1,18 @@
 ﻿body {
 }
+.user-submit {
+    padding-top: 19px;
+}
+
+.user-submit a {
+    background-color: #42a8f2;
+    color: #fff;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
 
 img.question-displayed {
     display: block;
