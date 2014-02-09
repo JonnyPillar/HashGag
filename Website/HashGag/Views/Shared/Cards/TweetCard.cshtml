@@ -1,138 +1,24 @@
 ﻿@model HashGag.Models.Tweet
 
-<div>
-    <h4>Tweet</h4>
-	<hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.TweetID)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.TweetID)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.CreatedAt)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.CreatedAt)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.FavouriteCount)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.FavouriteCount)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Favourited)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Favourited)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.IDString)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.IDString)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.InReplyToScreenName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.InReplyToScreenName)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.InReplyToStatusID)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.InReplyToStatusID)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.InReplyToStatusIDString)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.InReplyToStatusIDString)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.InReplyToUserID)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.InReplyToUserID)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.InReplyToUserIDString)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.InReplyToUserIDString)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Lat)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Lat)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Long)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Long)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.RetweetCount)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.RetweetCount)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Retweeted)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Retweeted)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Text)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Text)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.TwitterUser.Description)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.TwitterUser.Description)
-        </dd>
-
-    </dl>
+<div id="tweetcard-container">
+    <div id="tweetcard-profileimage">
+         <img src="@Html.DisplayFor(model => model.TwitterUser.ProfileImageURL)"/>
+    </div>
+   
+    <div id="tweetcard-screenname">
+        @Html.DisplayFor(model => model.TwitterUser.ScreenName)
+    </div>
+            
+    <div id="tweetcard-tweet">
+        @Html.DisplayFor(model => model.Text)
+    </div>
+    
+    <div id ="tweetcard-retweets">
+         @Html.DisplayFor(model => model.RetweetCount)
+    </div>
+              
+    
+        
 </div>
 @*<p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.HashgagTweetID }) |

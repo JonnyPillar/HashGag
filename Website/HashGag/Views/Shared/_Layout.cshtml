@@ -3,11 +3,12 @@
 <html>
 @Html.Partial("_Header")
     <body>
-        @Html.Partial("~/Views/Account/_Login.cshtml")
+        @Html.Partial("~/Views/Shared/Cards/TweetCard.cshtml")
         
 
         @Html.Partial("_Navigation")
         <div class="container body-content">
+            
             @RenderBody()
             @Html.Partial("_Footer")
         </div>
