@@ -81,7 +81,11 @@ namespace HashGag.Controllers
                 list.Add(cTUser);
             }
 
-            CompetitionViewModel cmodel = new CompetitionViewModel(list, list, list);
+            List<CompTweetModel> tempOrderedTweets = new List<CompTweetModel>();
+
+            tempOrderedTweets.AddRange(from atweet in list orderby atweet.tweet.RetweetCount descending select atweet);
+           
+            CompetitionViewModel cmodel = new CompetitionViewModel(tempOrderedTweets, list, list);
             return View("Index", cmodel);
         }
 	}
