@@ -1,5 +1,7 @@
-﻿//@Model User
+﻿@model HashGag.Models.Question
 
 @{
     ViewBag.Title = "Home Page";
 }
+
+@Html.Partial("_QuestionCard",Model)

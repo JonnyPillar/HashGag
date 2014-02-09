@@ -299,9 +299,9 @@
     <Content Include="Views\User\Index.cshtml" />
     <Content Include="Views\Standings\Index.cshtml" />
     <Content Include="Views\Shared\Cards\TweetCard.cshtml" />
-    <Content Include="Views\Shared\Cards\QuestionCard.cshtml" />
     <Content Include="Views\Account\_Login.cshtml" />
     <Content Include="Views\Shared\_Invite.cshtml" />
+    <Content Include="Views\Home\_QuestionCard.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
