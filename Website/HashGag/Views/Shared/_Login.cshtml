@@ -6,8 +6,13 @@
     <div id="login-line">
         <img src="/Content/Images/invite_line.png" alt="line"/>
     </div>
-    
-    <div id="login-button">
-        <a><img src="/Content/Images/Login_button.png"/></a>
+
+    <div id="login-button"> 
+        @using (Html.BeginForm("ExternalLogin", "Account", new { provider = "Twitter" }))
+        {
+            @Html.AntiForgeryToken()
+            <button value="Twitter" ><img src="/Content/Images/Login_button.png" /></button>
+        }
+        
     </div> 
 </div>

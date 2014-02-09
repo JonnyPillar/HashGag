@@ -2,9 +2,13 @@
 
 <script type="text/javascript">
 
-    //$(document).ready(function() {
-    //    alert("asas");
-    //});
+    $(document).ready(function() {
+        $(".loginBackground").hide();
+        $("#loginLink").click(function (event) {
+            event.preventDefault();
+            $(".loginBackground").toggle();
+        });
+    });
 
 </script>
 
@@ -28,8 +32,5 @@
     </div>
 </div>
 <div class=" loginBackground">
-    
-    
     @Html.Partial("_Login")
-
 </div>

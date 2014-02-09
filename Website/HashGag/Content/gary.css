@@ -1,11 +1,13 @@
 ﻿body {
 }
+
 img.question-displayed {
     display: block;
     margin-left: auto;
     margin-right: auto;
     padding-top: 15px;
 }
+
 #submitquestion-textfield {
     padding-top: 13px;
     padding-left: 43px;
@@ -14,20 +16,20 @@ img.question-displayed {
     text-align: center;
 }
 
-#submitquestion-textfield textarea {
-    width: 339px;
-    height: 110px;
-    border-color: #42a8f2;
-    color: #42a8f2;
-    resize: none;
-    font-size: 13px;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
-    max-width: 340px;
-    font-size: 20px;
-}
-    /*
+    #submitquestion-textfield textarea {
+        width: 339px;
+        height: 110px;
+        border-color: #42a8f2;
+        color: #42a8f2;
+        resize: none;
+        font-size: 13px;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+        max-width: 340px;
+        font-size: 20px;
+    }
+/*
     Cards    
 */
 #tweetcard-profileimage {
@@ -43,47 +45,47 @@ img.question-displayed {
     font-size: 18px;
 }
 
-    #tweetcard-profileimage #tweetcard-ImagePanel {
-        float: left;
-        margin: 0 20px 0 0;
-        clear: left;
+#tweetcard-profileimage #tweetcard-ImagePanel {
+    float: left;
+    margin: 0 20px 0 0;
+    clear: left;
+}
+
+    #tweetcard-profileimage #tweetcard-ImagePanel img {
+        -webkit-border-radius: 42px;
+        -moz-border-radius: 42px;
+        border-radius: 42px;
     }
 
-        #tweetcard-profileimage #tweetcard-ImagePanel img {
-            -webkit-border-radius: 42px;
-            -moz-border-radius: 42px;
-            border-radius: 42px;
-        }
+#tweetcard-profileimage #tweetcard-InfoPanel {
+    font-size: 12px;
+}
 
-        #tweetcard-profileimage #tweetcard-InfoPanel {
-            font-size: 12px;
-        }
+#tweetcard-profileimage #tweet-card-ScorePanel {
+    float: right;
+    width: 30%;
+    text-align: center;
+    font-size: 26px;
+}
 
-    #tweetcard-profileimage #tweet-card-ScorePanel {
-        float: right;
-        width: 30%;
-        text-align: center;
-        font-size: 26px;
-    }
-
-        #tweetcard-profileimage #tweetcard-ScorePanel span {
-            width: 84px;
-            height: 24px;
-            padding: 15px 25px;
-            margin-left: 70px;
-            display: block;
-            text-align: left;
-            font-size: 30px;
-            color: #42a8f2;
-        }
+#tweetcard-profileimage #tweetcard-ScorePanel span {
+    width: 84px;
+    height: 24px;
+    padding: 15px 25px;
+    margin-left: 70px;
+    display: block;
+    text-align: left;
+    font-size: 30px;
+    color: #42a8f2;
+}
 
 .questionInfoPanel {
     width: 75%;
 }
-.questionInfoPanel h3{
 
-    margin-top: 13px;
-}
+    .questionInfoPanel h3 {
+        margin-top: 13px;
+    }
 
 #invite-logo {
     padding-left: 173px;
@@ -95,6 +97,7 @@ img.question-displayed {
     padding-bottom: 7px;
     padding-left: 15px;
 }
+
 .invite-twitter-handle {
     padding-top: 13px;
     padding-left: 43px;
@@ -102,66 +105,46 @@ img.question-displayed {
     padding-left: 45px;
 }
 
-.invite-twitter-handle textarea {
-    width: 339px;
-    border-color: #42a8f2;
-    resize: none;
-    color: #42a8f2;
-    font-size: 13px;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
-    max-width: 340px;
-    height: 55px;
-    font-size: 22px;
-}
+    .invite-twitter-handle textarea {
+        width: 339px;
+        border-color: #42a8f2;
+        resize: none;
+        color: #42a8f2;
+        font-size: 13px;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+        max-width: 340px;
+        height: 55px;
+        font-size: 22px;
+    }
 
 #invite-tweet-message {
     padding-left: 45px;
     padding-bottom: 13px;
 }
 
-#invite-tweet-message textarea{
-    width: 339px;
-    height: 155px;
-    border-color: #42a8f2;
-    color: #42a8f2;
-    resize: none;
-    font-size: 13px;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
-    max-width: 340px;
-    font-size: 20px;
-}
+    #invite-tweet-message textarea {
+        width: 339px;
+        height: 155px;
+        border-color: #42a8f2;
+        color: #42a8f2;
+        resize: none;
+        font-size: 13px;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+        max-width: 340px;
+        font-size: 20px;
+    }
 
 #invite-button {
     padding-left: 35px;
 }
 
-#invite-container { 
+#invite-container {
     margin: 0 auto;
     width: 34%;
-}
-
-#login-container {
-    margin: 0 auto;
-    width: 33%;
-}
-
-#login-button {
-    padding-top: 49px;
-    padding-bottom: 25px;
-}
-
-#login-line {
-    padding-left: 18px;
-}
-
-#login-logo {
-    padding-left: 45px;
-    padding-bottom: 27px;
-    padding-top: 19px;
 }
 
 .competition-container {
@@ -169,13 +152,15 @@ img.question-displayed {
     width: 90%;
     float: left;
 }
+
 .wireframe {
     border: 1px solid black;
 }
+
 #competition-question {
     text-align: center;
     font-weight: bolder;
-    font-family: sans-serif; 
+    font-family: sans-serif;
     color: blueviolet;
     padding-bottom: 14px;
     padding-top: 14px;
@@ -184,12 +169,12 @@ img.question-displayed {
 
 #user-title {
     font-size: 32px;
-text-align: center;
-font-weight: bolder;
-font-family: helvetica;
-color: cornflowerblue;
-padding-bottom: 14px;
-padding-top: 14px;
+    text-align: center;
+    font-weight: bolder;
+    font-family: helvetica;
+    color: cornflowerblue;
+    padding-bottom: 14px;
+    padding-top: 14px;
 }
 
 #competition-joinorsubmit {
@@ -201,20 +186,22 @@ padding-top: 14px;
     font-size: 44px;
 }
 
-#competition-submittext textarea {
-    height: 12%;
-    width: 35%;
-}
+    #competition-submittext textarea {
+        height: 12%;
+        width: 35%;
+    }
 
 #competition-submittitle {
     font-size: 44px;
 }
+
 #competition-submitbutton {
     padding-top: 11px;
     padding-bottom: 11px;
 }
-#competition-submitbutton button {
-    padding-top: 5px;
-    height: 77px;
-    font-size: 47px;
-}
+
+    #competition-submitbutton button {
+        padding-top: 5px;
+        height: 77px;
+        font-size: 47px;
+    }
